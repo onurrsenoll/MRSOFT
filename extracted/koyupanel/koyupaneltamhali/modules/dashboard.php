@@ -41,10 +41,10 @@ try {
     
     // Son 10 dosya
     $sonDosyalar = $db->query("
-        SELECT c.*, 
-               i.name as sigorta_adi, 
-               s.name as asama_adi, 
-               u.full_name as sorumlu_adi
+        SELECT c.*,
+               i.name as sigorta_adi,
+               s.name as asama_adi,
+               COALESCE(u.full_name, u.name, u.username) as sorumlu_adi
         FROM cases c
         LEFT JOIN insurers i ON c.davali_sirket_id = i.id
         LEFT JOIN stage_definitions s ON c.current_stage_id = s.id

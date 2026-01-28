@@ -42,11 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$username]);
             $user = $stmt->fetch();
             
-            if ($user && password_verify($password, $user['password_hash'])) {
+            // Şifre alanı için uyumluluk (password veya password_hash)
+            $passwordField = isset($user['password_hash']) ? $user['password_hash'] : ($user['password'] ?? '');
+
+            if ($user && password_verify($password, $passwordField)) {
                 // Giriş başarılı
                 session_regenerate_id(true);
                 $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_name'] = $user['full_name'];
+                $_SESSION['user_name'] = $user['full_name'] ?? $user['name'] ?? $user['username'];
                 $_SESSION['user_role'] = $user['role'];
                 $_SESSION['username'] = $user['username'];
                 
