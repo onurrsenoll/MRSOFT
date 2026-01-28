@@ -458,19 +458,19 @@ tr:hover {
     gap: 15px;
 }
 
-.f-group {
+.f-group, .f-grp {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.f-label {
+.f-label, .f-lbl {
     font-size: 9px;
     font-weight: 700;
     color: var(--text2);
 }
 
-.f-input, .f-select {
+.f-input, .f-select, .f-in, .f-sel {
     padding: 11px 14px;
     background: var(--bg-input);
     border: 1px solid var(--border);
@@ -479,7 +479,7 @@ tr:hover {
     font-size: 11px;
 }
 
-.f-input:focus, .f-select:focus {
+.f-input:focus, .f-select:focus, .f-in:focus, .f-sel:focus {
     outline: none;
     border-color: var(--blue);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);

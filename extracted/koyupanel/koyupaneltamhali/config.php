@@ -65,12 +65,16 @@ function isLoggedIn() {
 }
 
 /**
- * ROL KONTROLÜ
+ * ROL KONTROLÜ (Case-insensitive)
  */
 function hasRole($roles) {
     if (!isLoggedIn()) return false;
     if (is_string($roles)) $roles = [$roles];
-    return in_array($_SESSION['user_role'] ?? '', $roles);
+    $userRole = strtoupper($_SESSION['user_role'] ?? '');
+    foreach ($roles as $role) {
+        if (strtoupper($role) === $userRole) return true;
+    }
+    return false;
 }
 
 /**
@@ -78,15 +82,16 @@ function hasRole($roles) {
  */
 function hasPermission($menu_key) {
     if (!isLoggedIn()) return false;
-    
-    // Admin her zaman tam yetki
-    if (hasRole(['ADMIN'])) return true;
-    
+
+    // Admin her zaman tam yetki (case-insensitive)
+    $userRole = strtoupper($_SESSION['user_role'] ?? '');
+    if ($userRole === 'ADMIN' || $userRole === 'YÖNETİCİ') return true;
+
     // Yetkileri session'dan al (cache)
     if (!isset($_SESSION['user_permissions'])) {
         loadUserPermissions();
     }
-    
+
     return in_array($menu_key, $_SESSION['user_permissions'] ?? []);
 }
 
