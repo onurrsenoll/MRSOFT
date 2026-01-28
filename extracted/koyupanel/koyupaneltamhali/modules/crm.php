@@ -101,7 +101,12 @@ if (isset($_GET['convert']) && intval($_GET['convert']) > 0) {
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<div class="page-title"><i class="fas fa-headset"></i> CRM TAKİP</div>
+<div class="page-title">
+    <i class="fas fa-headset"></i> CRM
+    <button onclick="document.getElementById('crmModal').style.display='flex'" class="btn btn-suc" style="margin-left:auto;font-size:12px">
+        <i class="fas fa-plus"></i> YENİ KAYIT
+    </button>
+</div>
 
 <?php if ($error): ?>
 <div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> <?= e($error) ?></div>
@@ -111,57 +116,66 @@ include __DIR__ . '/../includes/header.php';
 <div class="alert alert-success"><i class="fas fa-check-circle"></i> İŞLEM BAŞARILI</div>
 <?php endif; ?>
 
-<!-- YENİ KAYIT FORMU -->
-<div class="panel">
-    <div class="panel-head">
-        <div class="panel-title"><i class="fas fa-plus"></i> YENİ CRM KAYDI</div>
-    </div>
-    <form method="POST" style="padding:20px">
-        <input type="hidden" name="action" value="ekle">
-        <div class="form-grid">
-            <div class="frm-grp">
-                <label class="frm-lbl">ADI SOYADI <span class="req">*</span></label>
-                <input type="text" name="ad_soyad" class="frm-in" required>
+<!-- YENİ KAYIT MODAL -->
+<div id="crmModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:99999;align-items:center;justify-content:center;padding:20px">
+    <div style="background:#1e293b;border-radius:12px;width:100%;max-width:700px;max-height:90vh;overflow:auto;border:2px solid #3b82f6">
+        <div style="padding:20px;border-bottom:1px solid #334155;display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0;color:#f1f5f9;font-size:16px"><i class="fas fa-plus-circle"></i> YENİ CRM KAYDI</h3>
+            <button onclick="document.getElementById('crmModal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer">&times;</button>
+        </div>
+        <form method="POST" style="padding:20px">
+            <input type="hidden" name="action" value="ekle">
+            <div class="form-grid">
+                <div class="frm-grp">
+                    <label class="frm-lbl">ADI SOYADI <span class="req">*</span></label>
+                    <input type="text" name="ad_soyad" class="frm-in" required>
+                </div>
+                <div class="frm-grp">
+                    <label class="frm-lbl">TELEFON <span class="req">*</span></label>
+                    <input type="tel" name="telefon" class="frm-in" required>
+                </div>
+                <div class="frm-grp">
+                    <label class="frm-lbl">T.C. KİMLİK</label>
+                    <input type="text" name="tc_kimlik" class="frm-in" maxlength="11">
+                </div>
+                <div class="frm-grp">
+                    <label class="frm-lbl">KONU</label>
+                    <select name="konu" class="frm-sel">
+                        <option value="">SEÇİNİZ</option>
+                        <option value="ADK">ADK - ARAÇ DEĞER KAYBI</option>
+                        <option value="BEDENI">BEDENİ HASAR</option>
+                        <option value="GENEL">GENEL BİLGİ</option>
+                    </select>
+                </div>
+                <div class="frm-grp">
+                    <label class="frm-lbl">SORUMLU</label>
+                    <select name="sorumlu_user_id" class="frm-sel">
+                        <?php foreach ($sorumlular as $s): ?>
+                        <option value="<?= $s['id'] ?>" <?= $s['id'] == $_SESSION['user_id'] ? 'selected' : '' ?>><?= e($s['full_name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="frm-grp">
+                    <label class="frm-lbl">SONRAKİ ARAMA TARİHİ</label>
+                    <input type="datetime-local" name="sonraki_tarih" class="frm-in">
+                </div>
+                <div class="frm-grp" style="grid-column:span 2">
+                    <label class="frm-lbl">NOTLAR</label>
+                    <textarea name="notes" class="frm-ta" rows="2"></textarea>
+                </div>
             </div>
-            <div class="frm-grp">
-                <label class="frm-lbl">TELEFON <span class="req">*</span></label>
-                <input type="tel" name="telefon" class="frm-in" required>
-            </div>
-            <div class="frm-grp">
-                <label class="frm-lbl">T.C. KİMLİK</label>
-                <input type="text" name="tc_kimlik" class="frm-in" maxlength="11">
-            </div>
-            <div class="frm-grp">
-                <label class="frm-lbl">KONU</label>
-                <select name="konu" class="frm-sel">
-                    <option value="">SEÇİNİZ</option>
-                    <option value="ADK">ADK - ARAÇ DEĞER KAYBI</option>
-                    <option value="BEDENI">BEDENİ HASAR</option>
-                    <option value="GENEL">GENEL BİLGİ</option>
-                </select>
-            </div>
-            <div class="frm-grp">
-                <label class="frm-lbl">SORUMLU</label>
-                <select name="sorumlu_user_id" class="frm-sel">
-                    <?php foreach ($sorumlular as $s): ?>
-                    <option value="<?= $s['id'] ?>" <?= $s['id'] == $_SESSION['user_id'] ? 'selected' : '' ?>><?= e($s['full_name']) ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="frm-grp">
-                <label class="frm-lbl">SONRAKİ ARAMA TARİHİ</label>
-                <input type="datetime-local" name="sonraki_tarih" class="frm-in">
-            </div>
-            <div class="frm-grp" style="grid-column:span 2">
-                <label class="frm-lbl">NOTLAR</label>
-                <textarea name="notes" class="frm-ta" rows="2"></textarea>
-            </div>
-            <div class="frm-grp">
+            <div style="margin-top:20px;display:flex;gap:10px;justify-content:flex-end">
+                <button type="button" onclick="document.getElementById('crmModal').style.display='none'" class="btn btn-sec"><i class="fas fa-times"></i> İPTAL</button>
                 <button type="submit" class="btn btn-suc"><i class="fas fa-save"></i> KAYDET</button>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
+<script>
+document.getElementById('crmModal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+});
+</script>
 
 <!-- FİLTRE -->
 <form method="GET" class="filter">
