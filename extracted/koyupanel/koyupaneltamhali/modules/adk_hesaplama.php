@@ -1,16 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+/**
+ * MR HASAR DANIŞMANLIK - ADK HESAPLAMA
+ * EXCELLENCE DISTINGUISHES US ALWAYS
+ */
 
 require_once __DIR__ . '/../config.php';
-
-if (!isset($_SESSION['user_id'])) {
-    $_SESSION['user_id'] = 1;
-}
+startSecureSession();
 
 $error = '';
 $success = '';

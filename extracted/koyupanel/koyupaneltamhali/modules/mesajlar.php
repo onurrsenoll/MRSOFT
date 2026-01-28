@@ -1,17 +1,11 @@
 <?php
 /**
- * SAY HASAR DANIŞMANLIK - MESAJLAR
+ * MR HASAR DANIŞMANLIK - MESAJLAR
+ * EXCELLENCE DISTINGUISHES US ALWAYS
  */
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 require_once __DIR__ . '/../config.php';
-
-if (!isset($_SESSION['user_id'])) {
-    $_SESSION['user_id'] = 1; // Geçici
-}
+startSecureSession();
 
 
 
