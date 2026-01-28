@@ -65,7 +65,7 @@ body{padding-top:55px!important}
                 <?php if (hasPermission('crm')): ?>
                 <div class="drop-div"></div>
                 <a href="crm.php" class="drop-item">
-                    <i class="fas fa-headset"></i> CRM TAKİP
+                    <i class="fas fa-headset"></i> CRM
                 </a>
                 <?php endif; ?>
             </div>
