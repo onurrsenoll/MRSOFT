@@ -604,16 +604,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     <tr>
                         <td class="text-muted">Durum:</td>
                         <td>
-                            <span class="badge bg-<?php
-                                echo match($case['status']) {
-                                    'AKTIF' => 'success',
-                                    'BEKLEMEDE' => 'warning',
-                                    'TAMAMLANDI' => 'info',
-                                    'KAPANDI' => 'secondary',
-                                    'İPTAL' => 'danger',
-                                    default => 'secondary'
-                                };
-                            ?>">
+                            <?php
+                                $caseStatusClass = 'secondary';
+                                if ($case['status'] === 'AKTIF') $caseStatusClass = 'success';
+                                elseif ($case['status'] === 'BEKLEMEDE') $caseStatusClass = 'warning';
+                                elseif ($case['status'] === 'TAMAMLANDI') $caseStatusClass = 'info';
+                                elseif ($case['status'] === 'KAPANDI') $caseStatusClass = 'secondary';
+                                elseif ($case['status'] === 'İPTAL') $caseStatusClass = 'danger';
+                            ?>
+                            <span class="badge bg-<?= $caseStatusClass ?>">
                                 <?= e($case['status']) ?>
                             </span>
                         </td>

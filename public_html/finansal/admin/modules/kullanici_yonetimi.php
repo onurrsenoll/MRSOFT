@@ -111,14 +111,13 @@ $users = $stmt->fetchAll();
                         <td><?= e($u['email']) ?></td>
                         <td><?= e($u['phone'] ?? '-') ?></td>
                         <td>
-                            <span class="badge bg-<?php
-                                echo match($u['role']) {
-                                    'admin' => 'danger',
-                                    'manager' => 'warning',
-                                    'lawyer' => 'info',
-                                    default => 'secondary'
-                                };
-                            ?>">
+                            <?php
+                                $roleClass = 'secondary';
+                                if ($u['role'] === 'admin') $roleClass = 'danger';
+                                elseif ($u['role'] === 'manager') $roleClass = 'warning';
+                                elseif ($u['role'] === 'lawyer') $roleClass = 'info';
+                            ?>
+                            <span class="badge bg-<?= $roleClass ?>">
                                 <?= strtoupper($u['role']) ?>
                             </span>
                         </td>

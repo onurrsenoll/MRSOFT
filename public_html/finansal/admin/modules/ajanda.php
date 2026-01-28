@@ -168,14 +168,13 @@ $cases = $stmt->fetchAll();
                                 <div class="fw-bold <?= $isToday ? 'text-primary' : '' ?>"><?= $day ?></div>
                                 <?php foreach (array_slice($dayEvents, 0, 2) as $de): ?>
                                 <div class="small">
-                                    <span class="badge bg-<?php
-                                        echo match($de['event_type']) {
-                                            'DURUŞMA' => 'danger',
-                                            'TOPLANTI' => 'warning',
-                                            'RANDEVU' => 'info',
-                                            default => 'secondary'
-                                        };
-                                    ?>" style="font-size: 0.65rem;">
+                                    <?php
+                                        $eventClass = 'secondary';
+                                        if ($de['event_type'] === 'DURUŞMA') $eventClass = 'danger';
+                                        elseif ($de['event_type'] === 'TOPLANTI') $eventClass = 'warning';
+                                        elseif ($de['event_type'] === 'RANDEVU') $eventClass = 'info';
+                                    ?>
+                                    <span class="badge bg-<?= $eventClass ?>" style="font-size: 0.65rem;">
                                         <?= e(mb_substr($de['title'], 0, 15)) ?>
                                     </span>
                                 </div>
@@ -206,14 +205,13 @@ $cases = $stmt->fetchAll();
             <?php foreach ($upcomingEvents as $e): ?>
             <div class="list-group-item d-flex justify-content-between align-items-center">
                 <div>
-                    <span class="badge bg-<?php
-                        echo match($e['event_type']) {
-                            'DURUŞMA' => 'danger',
-                            'TOPLANTI' => 'warning',
-                            'RANDEVU' => 'info',
-                            default => 'secondary'
-                        };
-                    ?> me-2"><?= e($e['event_type']) ?></span>
+                    <?php
+                        $evtClass = 'secondary';
+                        if ($e['event_type'] === 'DURUŞMA') $evtClass = 'danger';
+                        elseif ($e['event_type'] === 'TOPLANTI') $evtClass = 'warning';
+                        elseif ($e['event_type'] === 'RANDEVU') $evtClass = 'info';
+                    ?>
+                    <span class="badge bg-<?= $evtClass ?> me-2"><?= e($e['event_type']) ?></span>
                     <strong><?= e($e['title']) ?></strong>
                     <?php if ($e['file_no']): ?>
                     <small class="text-muted ms-2">(<?= e($e['file_no']) ?>)</small>
@@ -250,14 +248,13 @@ $cases = $stmt->fetchAll();
             <div class="list-group-item">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <span class="badge bg-<?php
-                            echo match($e['event_type']) {
-                                'DURUŞMA' => 'danger',
-                                'TOPLANTI' => 'warning',
-                                'RANDEVU' => 'info',
-                                default => 'secondary'
-                            };
-                        ?> me-2"><?= $e['event_time'] ? date('H:i', strtotime($e['event_time'])) : $e['event_type'] ?></span>
+                        <?php
+                            $evType = 'secondary';
+                            if ($e['event_type'] === 'DURUŞMA') $evType = 'danger';
+                            elseif ($e['event_type'] === 'TOPLANTI') $evType = 'warning';
+                            elseif ($e['event_type'] === 'RANDEVU') $evType = 'info';
+                        ?>
+                        <span class="badge bg-<?= $evType ?> me-2"><?= $e['event_time'] ? date('H:i', strtotime($e['event_time'])) : $e['event_type'] ?></span>
                         <strong><?= e($e['title']) ?></strong>
                     </div>
                     <a href="index.php?page=ajanda&complete=<?= $e['id'] ?>" class="btn btn-sm btn-success">

@@ -209,15 +209,14 @@ if ($viewId) {
                                     <i class="bi bi-telephone me-1"></i><?= e($lead['phone'] ?? '-') ?>
                                 </small>
                             </div>
-                            <span class="badge bg-<?php
-                                echo match($lead['status']) {
-                                    'BEKLEMEDE' => 'warning',
-                                    'İLGİLİ' => 'info',
-                                    'DOSYA AÇILDI' => 'success',
-                                    'İPTAL' => 'danger',
-                                    default => 'secondary'
-                                };
-                            ?>"><?= e($lead['status']) ?></span>
+                            <?php
+                                $statusClass = 'secondary';
+                                if ($lead['status'] === 'BEKLEMEDE') $statusClass = 'warning';
+                                elseif ($lead['status'] === 'İLGİLİ') $statusClass = 'info';
+                                elseif ($lead['status'] === 'DOSYA AÇILDI') $statusClass = 'success';
+                                elseif ($lead['status'] === 'İPTAL') $statusClass = 'danger';
+                            ?>
+                            <span class="badge bg-<?= $statusClass ?>"><?= e($lead['status']) ?></span>
                         </div>
 
                         <?php if ($lead['accident_date']): ?>
