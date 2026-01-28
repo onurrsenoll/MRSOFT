@@ -22,7 +22,7 @@ $eksperler = [];
 try {
     $db = getDB();
     $sigortalar = $db->query("SELECT id, firma_adi as name FROM sigorta_sirketleri WHERE durum = 1 ORDER BY firma_adi")->fetchAll();
-    $asamalar = $db->query("SELECT id, asama_adi as name FROM asama_durumlari WHERE durum = 1 ORDER BY sira")->fetchAll();
+    $asamalar = $db->query("SELECT id, name FROM stage_definitions WHERE is_active = 1 ORDER BY sort_order, name")->fetchAll();
     $avukatlar = $db->query("SELECT id, full_name FROM users WHERE role = 'AVUKAT' AND is_active = 1")->fetchAll();
     $sorumlular = $db->query("SELECT id, full_name FROM users WHERE is_active = 1 ORDER BY full_name")->fetchAll();
     $yonlendirenler = $db->query("SELECT id, ad_soyad FROM yonlendirenler WHERE durum = 1 ORDER BY ad_soyad")->fetchAll();
