@@ -1,0 +1,340 @@
+[14-Jan-2026 07:20:48 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 07:20:48 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 07:20:48 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 07:20:48 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 07:20:48 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 08:57:25 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function secureSessionStart() in /home/mrhasard/public_html/finansal/includes/header.php:11
+Stack trace:
+#0 /home/mrhasard/public_html/finansal/modules/dashboard.php(60): include()
+#1 {main}
+  thrown in /home/mrhasard/public_html/finansal/includes/header.php on line 11
+[14-Jan-2026 08:58:52 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function secureSessionStart() in /home/mrhasard/public_html/finansal/includes/header.php:11
+Stack trace:
+#0 /home/mrhasard/public_html/finansal/modules/dashboard.php(60): include()
+#1 {main}
+  thrown in /home/mrhasard/public_html/finansal/includes/header.php on line 11
+[14-Jan-2026 08:58:53 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function secureSessionStart() in /home/mrhasard/public_html/finansal/includes/header.php:11
+Stack trace:
+#0 /home/mrhasard/public_html/finansal/modules/dashboard.php(60): include()
+#1 {main}
+  thrown in /home/mrhasard/public_html/finansal/includes/header.php on line 11
+[14-Jan-2026 10:15:17 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:15:17 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:15:17 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 10:15:17 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:15:17 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:19:19 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 10:19:19 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 10:20:40 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:20:40 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:20:48 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:20:48 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:21:01 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:21:01 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_evrak.php on line 70
+[14-Jan-2026 10:26:53 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:26:53 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:26:53 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 10:26:53 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:26:53 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:28:44 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:28:44 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:28:44 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 10:28:44 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:28:44 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:29:21 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:29:21 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 10:29:21 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 10:29:21 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 10:29:21 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 17:52:26 Europe/Istanbul] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/ihbar_foyu.php on line 1
+[14-Jan-2026 17:52:26 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/ihbar_foyu.php on line 1
+[14-Jan-2026 17:52:33 Europe/Istanbul] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 17:52:33 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 17:54:54 Europe/Istanbul] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/ihbar_foyu.php on line 1
+[14-Jan-2026 17:54:54 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/ihbar_foyu.php on line 1
+[14-Jan-2026 17:55:18 Europe/Istanbul] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 17:55:18 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 17:58:47 Europe/Istanbul] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 17:58:47 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 1
+[14-Jan-2026 18:06:58 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:06:58 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:06:58 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:06:58 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:06:58 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:07:09 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:07:09 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:07:09 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:07:09 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:07:09 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:09:25 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:09:25 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:09:25 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:09:25 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:09:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:12:59 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:12:59 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:12:59 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:12:59 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:12:59 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:47 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:47 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:47 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:17:47 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:48 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:48 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:48 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:17:48 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:48 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:49 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:49 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:17:49 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:17:49 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:17:49 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:18:57 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:18:57 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:18:57 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:18:57 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:18:57 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:18:59 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:18:59 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[14-Jan-2026 18:18:59 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamisSayi in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 75
+[14-Jan-2026 18:18:59 Europe/Istanbul] PHP Notice:  Undefined variable: kullanicilar in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 18:18:59 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 97
+[14-Jan-2026 22:34:35 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:34:35 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:35:39 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:35:39 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:37:12 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:37:12 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:38:44 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:38:45 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:39:13 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:39:13 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:39:55 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:39:55 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 114
+[14-Jan-2026 22:40:50 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[14-Jan-2026 22:40:50 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[14-Jan-2026 22:41:06 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[14-Jan-2026 22:41:06 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[14-Jan-2026 22:41:46 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[14-Jan-2026 22:41:46 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:52:51 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:52:51 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:08 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:08 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:14 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:14 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:24 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 14:53:24 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_duzenle.php on line 87
+[15-Jan-2026 16:32:12 Europe/Istanbul] PHP Notice:  Undefined variable: toplamBorc in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 165
+[15-Jan-2026 16:32:16 Europe/Istanbul] PHP Notice:  Undefined variable: toplamBorc in /home/mrhasard/public_html/finansal/modules/yonlendiren.php on line 165
+[15-Jan-2026 16:58:29 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[15-Jan-2026 16:58:29 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 14
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: gelenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 166
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 220
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 222
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 226
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 229
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 240
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 241
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 249
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:19:01 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 385
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: gelenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 166
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 220
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 222
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 226
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 229
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 240
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 241
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 249
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:19:08 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 385
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: gelenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 166
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 220
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 222
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 226
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 229
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 240
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 241
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 249
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:25:18 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 385
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: gelenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 166
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 220
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 222
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 226
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 229
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 240
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 241
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 249
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:25:31 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 385
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: gelenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 157
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 163
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 166
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 175
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 220
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 222
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 226
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 229
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 240
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 241
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 249
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: tab in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: gidenler in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 259
+[15-Jan-2026 17:27:51 Europe/Istanbul] PHP Notice:  Undefined variable: okunmamis in /home/mrhasard/public_html/finansal/modules/mesajlar.php on line 385
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 31
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 31
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 243
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 243
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 678
+[15-Jan-2026 23:01:13 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 678
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 31
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 31
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 243
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 243
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Undefined variable: dosya in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 678
+[15-Jan-2026 23:01:23 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 678
+[15-Jan-2026 23:19:06 Europe/Istanbul] PHP Warning:  require_once(/home/mrhasard/public_html/finansal/modules/includes/config.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:19:06 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/mrhasard/public_html/finansal/modules/includes/config.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[15-Jan-2026 23:31:08 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 121
+[15-Jan-2026 23:31:08 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 121
+[15-Jan-2026 23:31:43 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 121
+[15-Jan-2026 23:31:43 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 121
+[15-Jan-2026 23:49:12 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:12 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:12 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:12 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:20 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:20 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:20 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:20 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:28 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:28 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:28 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:28 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:35 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:35 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[15-Jan-2026 23:49:35 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[15-Jan-2026 23:49:35 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:37:25 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:37:25 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:37:25 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:37:25 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:39:31 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:39:31 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:39:31 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:39:31 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:40:42 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:40:42 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:40:42 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:40:42 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:43:02 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:43:02 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 97
+[16-Jan-2026 11:43:02 Europe/Istanbul] PHP Notice:  Undefined variable: _SESSION in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 11:43:02 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/mrhasard/public_html/finansal/modules/dosya_ekle.php on line 122
+[16-Jan-2026 12:18:46 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '`' in /home/mrhasard/public_html/finansal/modules/test.php on line 3
+[16-Jan-2026 12:20:24 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '`' in /home/mrhasard/public_html/finansal/modules/test.php on line 3
+[16-Jan-2026 12:25:26 Europe/Istanbul] PHP Warning:  require_once(/home/mrhasard/public_html/finansal/modules/includes/config.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 12:25:26 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/mrhasard/public_html/finansal/modules/includes/config.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 12:25:45 Europe/Istanbul] PHP Warning:  require_once(/home/mrhasard/public_html/finansal/modules/includes/config.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 12:25:45 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/mrhasard/public_html/finansal/modules/includes/config.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 12:32:01 Europe/Istanbul] PHP Warning:  require_once(/home/mrhasard/public_html/finansal/modules/includes/config.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 12:32:01 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/mrhasard/public_html/finansal/modules/includes/config.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/dosya_detay.php on line 7
+[16-Jan-2026 17:25:06 Europe/Istanbul] PHP Warning:  The use statement with non-compound name 'TCPDF' has no effect in /home/mrhasard/public_html/finansal/modules/adk_pdf.php on line 10
+[16-Jan-2026 17:25:06 Europe/Istanbul] PHP Warning:  require_once(config.php): failed to open stream: No such file or directory in /home/mrhasard/public_html/finansal/modules/adk_pdf.php on line 7
+[16-Jan-2026 17:25:06 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required 'config.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/mrhasard/public_html/finansal/modules/adk_pdf.php on line 7
+[16-Jan-2026 23:43:43 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:43:43 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:43:45 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:43:45 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:43:46 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:43:46 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:10 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:10 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:21 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:21 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:22 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:22 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:45:23 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:46:12 Europe/Istanbul] PHP Notice:  Undefined variable: pdo in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[16-Jan-2026 23:46:12 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/mrhasard/public_html/finansal/modules/adk_rapor.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 18
+[17-Jan-2026 00:12:20 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '`' in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 273
+[17-Jan-2026 00:12:56 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '`' in /home/mrhasard/public_html/finansal/modules/adk_rapor.php on line 273
+[17-Jan-2026 05:21:14 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/mrhasard/public_html/finansal/modules/mesajlar.php:16) in /home/mrhasard/public_html/finansal/config.php on line 130
+[17-Jan-2026 05:21:24 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/mrhasard/public_html/finansal/modules/mesajlar.php:16) in /home/mrhasard/public_html/finansal/config.php on line 130
+[17-Jan-2026 05:21:25 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/mrhasard/public_html/finansal/modules/mesajlar.php:16) in /home/mrhasard/public_html/finansal/config.php on line 130
+[17-Jan-2026 05:21:30 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/mrhasard/public_html/finansal/modules/mesajlar.php:16) in /home/mrhasard/public_html/finansal/config.php on line 130
+[17-Jan-2026 05:21:52 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/mrhasard/public_html/finansal/modules/mesajlar.php:16) in /home/mrhasard/public_html/finansal/config.php on line 130
