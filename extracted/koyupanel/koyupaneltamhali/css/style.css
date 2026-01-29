@@ -1338,28 +1338,28 @@ input[type="checkbox"] {
 }
 
 /* ========================================
-   FOOTER - Her zaman sayfanın en altında sabit
+   FOOTER - Minimal sadece yazı
    ======================================== */
 .footer {
     text-align: center;
-    padding: 30px;
+    padding: 8px 15px;
     color: var(--text3);
-    font-size: 11px;
-    border-top: 1px solid var(--border);
-    margin-top: auto;
-    background: var(--bg-card);
+    font-size: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 100;
+    background: transparent;
+    pointer-events: none;
 }
 
 .footer-slogan {
     font-weight: 600;
     color: var(--mr-blue);
-    margin-top: 5px;
+    margin-top: 2px;
     letter-spacing: 1px;
+    font-size: 9px;
 }
 
 /* ========================================
