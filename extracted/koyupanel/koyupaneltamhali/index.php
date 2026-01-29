@@ -80,6 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME ?> - GİRİŞ</title>
+    <link rel="icon" type="image/png" href="assets/logos/logo-blue.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logos/logo-blue.png">
+    <link rel="apple-touch-icon" href="assets/logos/logo-blue.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -135,17 +138,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-body);
+            background-image: url('assets/images/login-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
             padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 22, 40, 0.7);
+            z-index: 0;
+        }
+
+        .light-mode::before {
+            background: rgba(241, 245, 249, 0.85);
         }
 
         .login-container {
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Theme Toggle */
@@ -185,18 +214,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: rgba(245, 158, 11, 0.25);
         }
 
-        /* Login Box */
+        /* Login Box - Glassmorphism */
         .login-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
+            background: rgba(17, 29, 53, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
             padding: 45px 40px;
             transition: var(--transition);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(59, 130, 246, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            max-width: 420px;
+            width: 100%;
         }
 
         .light-mode .login-box {
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(59, 130, 246, 0.1),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
         }
 
         /* Login Icon */
@@ -273,23 +316,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: var(--mr-blue);
         }
 
-        /* Form Input */
+        /* Form Input - Glassmorphism */
         .frm-in {
             width: 100%;
             padding: 16px 20px;
-            background: var(--bg-input);
-            border: 1px solid var(--border);
+            background: rgba(13, 26, 45, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 12px;
             color: var(--text);
             font-size: 14px;
             font-weight: 500;
             transition: var(--transition);
             outline: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .light-mode .frm-in {
+            background: rgba(226, 232, 240, 0.7);
+            border-color: rgba(59, 130, 246, 0.2);
         }
 
         .frm-in:focus {
             border-color: var(--mr-blue);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 0 20px rgba(59, 130, 246, 0.15);
         }
 
         .frm-in::placeholder {
@@ -335,31 +384,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             letter-spacing: 1px;
         }
 
-        /* Decorative Elements */
+        /* Decorative Elements - subtle glow */
         .login-decor {
             position: fixed;
             border-radius: 50%;
-            opacity: 0.3;
+            opacity: 0.15;
             pointer-events: none;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, transparent 70%);
+            z-index: 0;
         }
 
         .light-mode .login-decor {
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            opacity: 0.1;
         }
 
         .login-decor-1 {
-            width: 400px;
-            height: 400px;
-            top: -100px;
-            right: -100px;
+            width: 500px;
+            height: 500px;
+            top: -150px;
+            right: -150px;
         }
 
         .login-decor-2 {
-            width: 300px;
-            height: 300px;
-            bottom: -50px;
-            left: -50px;
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
         }
 
         /* Responsive */
