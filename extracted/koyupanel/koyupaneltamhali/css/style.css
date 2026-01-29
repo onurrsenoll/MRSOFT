@@ -101,23 +101,23 @@ body {
 }
 
 /* ========================================
-   ARKA PLAN WATERMARK LOGO
+   ARKA PLAN WATERMARK LOGO - Kartların altında
    ======================================== */
 body::before {
     content: '';
     position: fixed;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vw;
-    max-width: 600px;
-    max-height: 600px;
+    width: 40vw;
+    height: 40vw;
+    max-width: 450px;
+    max-height: 450px;
     background-image: url('../assets/logos/logo-white.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    opacity: 0.03;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
     transition: opacity 0.3s ease;
