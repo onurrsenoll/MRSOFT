@@ -214,32 +214,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: rgba(245, 158, 11, 0.25);
         }
 
-        /* Login Box - Glassmorphism */
+        /* Login Box - Transparent, no background */
         .login-box {
-            background: rgba(17, 29, 53, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 24px;
-            padding: 45px 40px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 20px;
             transition: var(--transition);
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(59, 130, 246, 0.15),
-                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            box-shadow: none;
             max-width: 420px;
             width: 100%;
         }
 
         .light-mode .login-box {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.15),
-                0 0 40px rgba(59, 130, 246, 0.1),
-                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
         /* Login Icon */
@@ -262,22 +252,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /* Login Title */
         .login-title {
             text-align: center;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            color: var(--text);
+            color: #ffffff;
             margin-bottom: 8px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .login-slogan {
             text-align: center;
-            font-size: 10px;
-            color: #f59e0b;
+            font-size: 11px;
+            color: #22d3ee;
             margin-bottom: 35px;
             letter-spacing: 3px;
             font-weight: 600;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Alert */
@@ -305,15 +297,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             align-items: center;
             gap: 8px;
             font-size: 11px;
-            color: var(--text2);
+            color: #ffffff;
             margin-bottom: 10px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .frm-lbl i {
-            color: var(--mr-blue);
+            color: #22d3ee;
         }
 
         /* Form Input - Glassmorphism */
@@ -332,8 +325,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .light-mode .frm-in {
-            background: rgba(226, 232, 240, 0.7);
-            border-color: rgba(59, 130, 246, 0.2);
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #ffffff;
+        }
+
+        .light-mode .frm-in::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .light-mode .frm-lbl {
+            color: #1e293b;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .light-mode .frm-lbl i {
+            color: #3b82f6;
+        }
+
+        .light-mode .login-footer {
+            color: rgba(30, 41, 59, 0.8);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
         }
 
         .frm-in:focus {
@@ -378,10 +390,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-footer {
             text-align: center;
             margin-top: 30px;
-            color: var(--text3);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 11px;
             font-weight: 500;
             letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         /* Decorative Elements - subtle glow */
