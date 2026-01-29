@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR Cam Kaplama Tasarımları - Önizleme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .design-title {
+            color: #1e3a6e;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1e3a6e;
+        }
+
+        .design-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .svg-preview {
+            background: linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+                        linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+                        linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .svg-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .office-mockup {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23f0f0f0" width="100" height="100"/><rect fill="%23e0e0e0" x="10" y="10" width="80" height="80"/></svg>');
+            position: relative;
+            padding: 30px;
+            border-radius: 10px;
+            border: 3px solid #1e3a6e;
+        }
+
+        .specs {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .specs h4 {
+            color: #1e3a6e;
+            margin-bottom: 10px;
+        }
+
+        .specs ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .specs li {
+            color: #555;
+            padding: 5px 10px;
+            background: white;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .specs li strong {
+            color: #1e3a6e;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #1e3a6e;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #2c4a8c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 110, 0.4);
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 5px;
+            font-size: 0.7rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏛️ MR Cam Kaplama Tasarımları</h1>
+        <p class="subtitle">Ofis Cam Bölmeleri İçin Profesyonel Tasarımlar</p>
+
+        <!-- Tasarım 1 -->
+        <div class="design-card">
+            <h2 class="design-title">Tasarım 1: Geniş Format - Yatay Panel</h2>
+            <p class="design-description">
+                Geniş ofis cam duvarları için ideal. Çapraz çizgiler soldan ve sağdan başlayıp
+                ortada logo ile buluşuyor. Profesyonel ve modern bir görünüm sağlar.
+            </p>
+            <div class="svg-preview">
+                <img src="mr-logo-cam-kaplama.svg" alt="MR Cam Kaplama Tasarım 1">
+            </div>
+            <div class="specs">
+                <h4>Teknik Özellikler</h4>
+                <ul>
+                    <li><strong>Boyut:</strong> 2400 x 800 px</li>
+                    <li><strong>Format:</strong> SVG (vektör)</li>
+                    <li><strong>Kullanım:</strong> Geniş cam duvarlar</li>
+                    <li><strong>Çizgi açısı:</strong> -45°</li>
+                </ul>
+            </div>
+            <a href="mr-logo-cam-kaplama.svg" download class="download-btn">📥 SVG İndir</a>
+        </div>
+
+        <!-- Tasarım 2 -->
+        <div class="design-card">
+            <h2 class="design-title">Tasarım 2: M ve R Harfli Versiyon</h2>
+            <p class="design-description">
+                "MR" markasını vurgulayan tasarım. Sol tarafta çizgili M harfi, sağ tarafta
+                çizgili R harfi ve ortada sütun logosu. Marka kimliğini güçlü şekilde yansıtır.
+            </p>
+            <div class="svg-preview">
+                <img src="mr-logo-cam-kaplama-v2.svg" alt="MR Cam Kaplama Tasarım 2">
+            </div>
+            <div class="specs">
+                <h4>Teknik Özellikler</h4>
+                <ul>
+                    <li><strong>Boyut:</strong> 2400 x 800 px</li>
+                    <li><strong>Format:</strong> SVG (vektör)</li>
+                    <li><strong>Kullanım:</strong> Ana giriş camları</li>
+                    <li><strong>Özellik:</strong> MR harfleri</li>
+                </ul>
+            </div>
+            <a href="mr-logo-cam-kaplama-v2.svg" download class="download-btn">📥 SVG İndir</a>
+        </div>
+
+        <!-- Tasarım 3 -->
+        <div class="design-card">
+            <h2 class="design-title">Tasarım 3: Tek Panel - Dikey Format</h2>
+            <p class="design-description">
+                Ofis bölme camları için tek panel tasarımı. Fotoğraftaki mavi çerçeveli
+                cam bölmelere uygun boyutlarda hazırlanmıştır.
+            </p>
+            <div class="svg-preview">
+                <img src="mr-logo-cam-kaplama-v3-panel.svg" alt="MR Cam Kaplama Panel">
+            </div>
+            <div class="specs">
+                <h4>Teknik Özellikler</h4>
+                <ul>
+                    <li><strong>Boyut:</strong> 1000 x 1200 px</li>
+                    <li><strong>Format:</strong> SVG (vektör)</li>
+                    <li><strong>Kullanım:</strong> Dikey cam paneller</li>
+                    <li><strong>Özellik:</strong> Ofis bölmeleri için</li>
+                </ul>
+            </div>
+            <a href="mr-logo-cam-kaplama-v3-panel.svg" download class="download-btn">📥 SVG İndir</a>
+        </div>
+
+        <!-- Tasarım 4 -->
+        <div class="design-card">
+            <h2 class="design-title">Tasarım 4: Minimal Versiyon</h2>
+            <p class="design-description">
+                Sade ve şık minimal tasarım. Daha az çizgi yoğunluğu ile
+                modern ve profesyonel bir görünüm. Küçük alanlar için idealdir.
+            </p>
+            <div class="svg-preview">
+                <img src="mr-logo-minimal.svg" alt="MR Cam Kaplama Minimal">
+            </div>
+            <div class="specs">
+                <h4>Teknik Özellikler</h4>
+                <ul>
+                    <li><strong>Boyut:</strong> 1200 x 600 px</li>
+                    <li><strong>Format:</strong> SVG (vektör)</li>
+                    <li><strong>Kullanım:</strong> Küçük paneller</li>
+                    <li><strong>Özellik:</strong> Minimal tasarım</li>
+                </ul>
+            </div>
+            <a href="mr-logo-minimal.svg" download class="download-btn">📥 SVG İndir</a>
+        </div>
+
+        <!-- Renk Paleti -->
+        <div class="design-card">
+            <h2 class="design-title">Renk Paleti</h2>
+            <p class="design-description">
+                Tasarımlarda kullanılan renkler. Cam kaplama üreticisine bu renk kodlarını verebilirsiniz.
+            </p>
+            <div class="color-palette">
+                <div class="color-swatch" style="background: #1e3a6e;">#1E3A6E<br>Ana Mavi</div>
+                <div class="color-swatch" style="background: #2c4a8c;">#2C4A8C<br>Açık Mavi</div>
+                <div class="color-swatch" style="background: #ffffff; color: #333; border: 2px solid #ddd;">#FFFFFF<br>Beyaz</div>
+                <div class="color-swatch" style="background: transparent; border: 2px dashed #999; color: #666;">Şeffaf<br>Cam Alanı</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>MR Cam Kaplama Tasarımları | 2025</p>
+            <p>Bu dosyalar vektör formatındadır ve her boyuta ölçeklenebilir.</p>
+        </footer>
+    </div>
+</body>
+</html>
