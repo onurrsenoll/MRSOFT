@@ -69,24 +69,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         body {
             min-height: 100vh;
-            background: #020c1b url('admin/img/login-bg.png') no-repeat center center fixed;
-            background-size: contain;
+            width: 100vw;
+            background: #020c1b url('admin/img/login-bg.png') no-repeat center center;
+            background-size: 100% 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 5%;
+            padding-right: 3%;
+            overflow: hidden;
         }
 
         .login-wrapper {
             width: 100%;
             max-width: 350px;
             padding: 20px;
+            background: transparent;
         }
 
         .login-form {
             background: transparent;
             padding: 40px 30px;
+            border: none;
+            box-shadow: none;
         }
 
         .form-group {
@@ -121,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
             padding: 15px 15px 15px 45px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
             color: #fff;
             font-size: 1rem;
@@ -129,24 +134,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         /* Yazı yazıldığında beyaz dolsun */
-        .form-group input:focus,
         .form-group input:not(:placeholder-shown) {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 1);
             color: #1a1a2e;
-            border-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input:focus {
+            background: rgba(255, 255, 255, 1);
+            color: #1a1a2e;
+            border-color: rgba(255, 255, 255, 0.9);
+            outline: none;
         }
 
         .form-group input:focus::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-
-        .form-group input:focus + .input-wrapper i,
-        .form-group input:not(:placeholder-shown) ~ i {
-            color: #1a1a2e;
+            color: rgba(0, 0, 0, 0.3);
         }
 
         /* Input içindeki icon rengi değişimi için */
@@ -360,14 +366,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 justify-content: center;
                 padding: 20px;
                 background-size: cover;
+                background-position: center;
             }
 
             .login-wrapper {
                 max-width: 100%;
+                background: transparent;
             }
 
             .login-form {
                 padding: 30px 20px;
+                background: transparent;
             }
         }
     </style>
