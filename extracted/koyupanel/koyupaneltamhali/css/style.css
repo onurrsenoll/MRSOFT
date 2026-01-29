@@ -1878,3 +1878,615 @@ body.light-mode td .file-link:hover {
 .cards > .card:hover {
     border-color: var(--mr-blue);
 }
+
+/* ========================================
+   LIGHT MODE - TÜM MODÜLLER İÇİN KAPSAMLI DÜZELTMELER
+   V2.0 - Tüm inline stil override
+   ======================================== */
+
+/* Module-specific overrides for light mode */
+body.light-mode .form-section,
+body.light-mode [style*="background: #1e293b"],
+body.light-mode [style*="background:#1e293b"] {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode [style*="background: #0f172a"],
+body.light-mode [style*="background:#0f172a"] {
+    background: var(--bg-input) !important;
+}
+
+body.light-mode [style*="border: 1px solid #334155"],
+body.light-mode [style*="border:1px solid #334155"] {
+    border-color: var(--border) !important;
+}
+
+body.light-mode [style*="color: #f1f5f9"],
+body.light-mode [style*="color:#f1f5f9"] {
+    color: var(--text) !important;
+}
+
+body.light-mode [style*="color: #94a3b8"],
+body.light-mode [style*="color:#94a3b8"] {
+    color: var(--text2) !important;
+}
+
+body.light-mode [style*="color: #64748b"],
+body.light-mode [style*="color:#64748b"] {
+    color: var(--text3) !important;
+}
+
+/* Info Card - dosya_detay.php */
+body.light-mode .info-card {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .info-card-title {
+    color: var(--mr-blue) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+body.light-mode .info-row {
+    border-bottom-color: var(--border) !important;
+}
+
+body.light-mode .info-label {
+    color: var(--text3) !important;
+}
+
+body.light-mode .info-value {
+    color: var(--text) !important;
+}
+
+/* Action Buttons */
+body.light-mode .action-buttons .btn-back {
+    background: var(--bg-input) !important;
+    color: var(--text) !important;
+}
+
+/* Hesaplama Card */
+body.light-mode .hesaplama-card {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .hesaplama-tarih {
+    color: var(--text3) !important;
+}
+
+/* Timeline */
+body.light-mode .timeline::before {
+    background: var(--border) !important;
+}
+
+body.light-mode .timeline-item::before {
+    border-color: var(--bg-card) !important;
+}
+
+body.light-mode .timeline-content {
+    background: var(--bg-input) !important;
+}
+
+body.light-mode .timeline-title {
+    color: var(--text) !important;
+}
+
+body.light-mode .timeline-meta {
+    color: var(--text3) !important;
+}
+
+/* Modal Light Mode */
+body.light-mode [style*="background:rgba(0,0,0,0.8)"],
+body.light-mode [style*="background: rgba(0,0,0,0.8)"] {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+body.light-mode #crmModal > div,
+body.light-mode .modal-content,
+body.light-mode [style*="background:#1e293b"],
+body.light-mode [style*="background: #1e293b"] {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode [style*="border-bottom:1px solid #334155"],
+body.light-mode [style*="border-bottom: 1px solid #334155"] {
+    border-bottom-color: var(--border) !important;
+}
+
+/* Form Grid in Modules */
+body.light-mode .form-grid {
+    background: transparent !important;
+}
+
+body.light-mode .form-grid .frm-grp label,
+body.light-mode .form-grid .frm-lbl {
+    color: var(--text3) !important;
+}
+
+/* CRM Module */
+body.light-mode #crmModal > div > div:first-child h3 {
+    color: var(--text) !important;
+}
+
+/* Filter Light Mode */
+body.light-mode .filter {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+
+body.light-mode .f-group label,
+body.light-mode .f-label {
+    color: var(--text3) !important;
+}
+
+body.light-mode .f-select,
+body.light-mode .f-input {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+/* Detay Grid */
+body.light-mode .detay-grid .info-card {
+    background: var(--bg-card) !important;
+}
+
+/* Badge on Light Mode */
+body.light-mode .badge-big {
+    opacity: 1;
+}
+
+body.light-mode .badge-big.badge-adk {
+    background: rgba(236, 72, 153, 0.15) !important;
+    color: #ec4899 !important;
+}
+
+body.light-mode .badge-big.badge-bedeni {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #10b981 !important;
+}
+
+body.light-mode .badge-big.badge-mdk {
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #3b82f6 !important;
+}
+
+/* Inline Style Override - Common Dark Colors to Light */
+body.light-mode .form-section[style*="#1e293b"],
+body.light-mode .form-section[style*="#334155"],
+body.light-mode .form-section[style*="#0f172a"] {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .section-header[style*="#3b82f6"] {
+    color: var(--mr-blue) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+/* Rapor ve Kasa modülleri için */
+body.light-mode [style*="color:var(--green)"],
+body.light-mode [style*="color: var(--green)"] {
+    color: #16a34a !important;
+}
+
+body.light-mode [style*="color:var(--red)"],
+body.light-mode [style*="color: var(--red)"] {
+    color: #dc2626 !important;
+}
+
+body.light-mode [style*="color:var(--blue)"],
+body.light-mode [style*="color: var(--blue)"] {
+    color: #2563eb !important;
+}
+
+/* Eski renk değişkenleri (Geriye uyumluluk) */
+:root {
+    --green: #22c55e;
+    --red: #ef4444;
+    --blue: #3b82f6;
+}
+
+body.light-mode {
+    --green: #16a34a;
+    --red: #dc2626;
+    --blue: #2563eb;
+}
+
+/* ========================================
+   FORM SECTION INLINE STYLE OVERRIDE
+   (dosya_ekle.php, dosya_duzenle.php vb.)
+   ======================================== */
+body.light-mode .form-section {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+body.light-mode .form-section .section-header {
+    color: var(--mr-blue) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+body.light-mode .form-section .frm-grp .frm-lbl,
+body.light-mode .form-section label {
+    color: var(--text3) !important;
+}
+
+body.light-mode .form-section .frm-in,
+body.light-mode .form-section .frm-sel,
+body.light-mode .form-section .frm-ta,
+body.light-mode .form-section input,
+body.light-mode .form-section textarea,
+body.light-mode .form-section select {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+body.light-mode .form-section .toggle-group {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .form-section .toggle-btn {
+    color: var(--text3) !important;
+    background: transparent !important;
+}
+
+body.light-mode .form-section .toggle-btn.active {
+    background: var(--gradient-btn) !important;
+    color: #fff !important;
+}
+
+body.light-mode .form-section .radio-item {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text2) !important;
+}
+
+body.light-mode .form-section .info-tip {
+    color: var(--text3) !important;
+}
+
+/* Form Actions */
+body.light-mode .form-actions {
+    border-top-color: var(--border) !important;
+}
+
+/* ========================================
+   SELECT OPTION LIGHT MODE
+   ======================================== */
+body.light-mode select option {
+    background: var(--bg-card) !important;
+    color: var(--text) !important;
+}
+
+/* ========================================
+   SCROLLBAR LIGHT MODE
+   ======================================== */
+body.light-mode::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+body.light-mode::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-color: var(--bg-body);
+}
+
+/* ========================================
+   EMPTY STATE LIGHT MODE
+   ======================================== */
+body.light-mode [style*="text-align:center"][style*="color:var(--text2)"],
+body.light-mode [style*="text-align: center"][style*="color: var(--text2)"] {
+    color: var(--text2) !important;
+}
+
+/* ========================================
+   NAVIGATION LIGHT MODE FIX
+   ======================================== */
+body.light-mode .nav {
+    background: var(--bg-card);
+    border-bottom-color: var(--mr-blue);
+}
+
+body.light-mode .nav-logo-text,
+body.light-mode .logo-text {
+    color: var(--text);
+}
+
+body.light-mode .nav-item,
+body.light-mode .menu-item {
+    color: var(--text2);
+}
+
+body.light-mode .nav-item:hover,
+body.light-mode .menu-item:hover {
+    color: var(--mr-blue);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+body.light-mode .user-menu {
+    background: var(--bg-input);
+    border-color: var(--border);
+}
+
+body.light-mode .user-name {
+    color: var(--text);
+}
+
+body.light-mode .dropdown-menu {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+
+/* ========================================
+   DETAY SAYFALARI - GEÇİCİ DÜZELTME
+   (Hard-coded inline styles override)
+   ======================================== */
+body.light-mode [style*="#1e293b"] {
+    background-color: var(--bg-card) !important;
+}
+
+body.light-mode [style*="#0f172a"] {
+    background-color: var(--bg-input) !important;
+}
+
+body.light-mode [style*="#334155"] {
+    border-color: var(--border) !important;
+}
+
+body.light-mode .panel-head .btn-sec {
+    background: var(--bg-input) !important;
+}
+
+/* ========================================
+   GLOBAL MODULE THEME OVERRIDES
+   Tüm modüllerdeki inline stillerini override eder
+   ======================================== */
+
+/* All modal-like overlays */
+body.light-mode [id$="Modal"] > div,
+body.light-mode [class*="modal"] > div {
+    background: var(--bg-card) !important;
+    border-color: var(--mr-blue) !important;
+}
+
+body.light-mode [id$="Modal"] > div > div:first-child,
+body.light-mode [class*="modal-header"] {
+    border-bottom-color: var(--border) !important;
+}
+
+body.light-mode [id$="Modal"] h3,
+body.light-mode [id$="Modal"] .modal-title {
+    color: var(--text) !important;
+}
+
+/* All form related elements within light mode */
+body.light-mode .form-section,
+body.light-mode .form-box,
+body.light-mode .form-card,
+body.light-mode .form-panel,
+body.light-mode .settings-card,
+body.light-mode .user-card,
+body.light-mode .stat-card-inner,
+body.light-mode .data-card {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+/* All input/form elements */
+body.light-mode input:not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]),
+body.light-mode textarea,
+body.light-mode select,
+body.light-mode .input,
+body.light-mode .select,
+body.light-mode .textarea {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+/* Label colors */
+body.light-mode label,
+body.light-mode .label,
+body.light-mode .form-label,
+body.light-mode .input-label {
+    color: var(--text3) !important;
+}
+
+/* Section headers */
+body.light-mode .section-header,
+body.light-mode .section-title,
+body.light-mode .box-header,
+body.light-mode .card-header-title {
+    color: var(--mr-blue) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+/* Muted text */
+body.light-mode .text-muted,
+body.light-mode .hint,
+body.light-mode .helper-text,
+body.light-mode small {
+    color: var(--text3) !important;
+}
+
+/* Close buttons in modals */
+body.light-mode [id$="Modal"] button[onclick*="display='none'"],
+body.light-mode [id$="Modal"] .close-btn,
+body.light-mode .modal-close-btn {
+    color: var(--text3) !important;
+}
+
+body.light-mode [id$="Modal"] button[onclick*="display='none'"]:hover,
+body.light-mode [id$="Modal"] .close-btn:hover {
+    color: var(--danger) !important;
+}
+
+/* Grid panels inside forms */
+body.light-mode .form-grid,
+body.light-mode .grid-form,
+body.light-mode .input-grid {
+    background: transparent !important;
+}
+
+/* Calendar/Date inputs */
+body.light-mode input[type="date"],
+body.light-mode input[type="datetime-local"],
+body.light-mode input[type="time"] {
+    color-scheme: light;
+}
+
+/* Buttons in light mode */
+body.light-mode .btn-secondary,
+body.light-mode .btn-cancel,
+body.light-mode button.secondary {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+/* Tables in light mode */
+body.light-mode table th {
+    background: var(--bg-input) !important;
+    color: var(--text3) !important;
+    border-bottom-color: var(--mr-blue) !important;
+}
+
+body.light-mode table td {
+    color: var(--text2) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+/* Ajanda/Calendar elements */
+body.light-mode .fc-theme-standard td,
+body.light-mode .fc-theme-standard th {
+    border-color: var(--border) !important;
+}
+
+body.light-mode .fc-daygrid-day {
+    background: var(--bg-card) !important;
+}
+
+/* Message bubbles */
+body.light-mode .message-item,
+body.light-mode .chat-bubble,
+body.light-mode .notification-item {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+}
+
+/* Timeline items */
+body.light-mode .timeline-content,
+body.light-mode .history-item,
+body.light-mode .activity-item {
+    background: var(--bg-input) !important;
+}
+
+/* Accordion/Collapse items */
+body.light-mode .accordion-header,
+body.light-mode .collapse-header {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .accordion-content,
+body.light-mode .collapse-content {
+    background: var(--bg-input) !important;
+}
+
+/* Search and filter boxes */
+body.light-mode .search-box,
+body.light-mode .filter-box,
+body.light-mode .search-container {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+/* Stat/KPI values in light mode */
+body.light-mode .stat-value,
+body.light-mode .kpi-value,
+body.light-mode .big-number {
+    color: var(--text) !important;
+}
+
+/* Action bar */
+body.light-mode .action-bar,
+body.light-mode .toolbar,
+body.light-mode .button-bar {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+/* Empty states */
+body.light-mode .empty-state,
+body.light-mode .no-data,
+body.light-mode .no-results {
+    color: var(--text3) !important;
+}
+
+/* Tab navigation */
+body.light-mode .tab-nav,
+body.light-mode .tabs-container {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .tab-item:not(.active) {
+    color: var(--text3) !important;
+}
+
+/* List items */
+body.light-mode .list-item,
+body.light-mode .file-item,
+body.light-mode .record-item {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .list-item:hover,
+body.light-mode .file-item:hover {
+    background: var(--bg-input) !important;
+}
+
+/* Info/Detail boxes */
+body.light-mode .info-box,
+body.light-mode .detail-box,
+body.light-mode .summary-box {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+}
+
+/* Footer actions */
+body.light-mode .form-actions,
+body.light-mode .modal-actions,
+body.light-mode .card-footer {
+    border-top-color: var(--border) !important;
+    background: var(--bg-card) !important;
+}
+
+/* Dropdowns */
+body.light-mode .dropdown-content,
+body.light-mode .dropdown-list,
+body.light-mode .autocomplete-list {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+
+body.light-mode .dropdown-item:hover {
+    background: var(--bg-input) !important;
+}
+
+/* Print button area */
+body.light-mode .print-area {
+    background: var(--bg-card) !important;
+}
+
+/* Status indicators */
+body.light-mode .status-badge,
+body.light-mode .badge {
+    opacity: 1;
+}

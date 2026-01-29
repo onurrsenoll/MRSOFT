@@ -19,8 +19,9 @@ $hesaplama_sonucu = null;
 $case_id = intval($_GET['case_id'] ?? 0);
 $standalone = isset($_GET['standalone']);
 
-// Tema tercihi (cookie'den al veya varsayılan)
-$tema = $_COOKIE['adk_tema'] ?? 'dark';
+// Tema tercihi - Ana site temasını kullan (cookie'den al)
+$tema = $_COOKIE['mr_theme'] ?? 'dark';
+$isLightMode = ($tema === 'light');
 
 try {
     $db = getDB();
@@ -65,56 +66,55 @@ include __DIR__ . '/../includes/header.php';
    Lacivert - Mavi - Beyaz Renk Paleti
    ======================================== */
 
-/* CSS Variables - Temalar */
-:root {
-    /* Şirket Renkleri */
+/* CSS Variables - Tema Uyumu */
+/* Ana site temasını miras al */
+.adk-pro-wrapper {
+    /* Şirket Renkleri - Ana siteden */
     --mr-navy: #1e3a5f;
-    --mr-blue: #2563eb;
+    --mr-blue: #3b82f6;
     --mr-cyan: #0ea5e9;
-    --mr-gradient: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-    --mr-gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+    --mr-gradient: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #0ea5e9 100%);
+    --mr-gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
 
     /* Durum Renkleri */
-    --success: #10b981;
+    --success: #22c55e;
     --warning: #f59e0b;
     --danger: #ef4444;
     --info: #3b82f6;
-}
 
-/* DARK THEME */
-[data-theme="dark"] {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-card: #1e293b;
-    --bg-input: #0f172a;
-    --text-primary: #f1f5f9;
+    /* DARK THEME (Varsayılan) */
+    --bg-primary: #0a1628;
+    --bg-secondary: #111d35;
+    --bg-card: #111d35;
+    --bg-input: #0d1a2d;
+    --text-primary: #ffffff;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-    --border-color: #334155;
+    --border-color: #1e3a5f;
     --shadow-light: rgba(0, 0, 0, 0.3);
     --shadow-dark: rgba(0, 0, 0, 0.5);
     --neumorphic-light: rgba(255, 255, 255, 0.05);
     --neumorphic-dark: rgba(0, 0, 0, 0.4);
-    --glass-bg: rgba(30, 41, 59, 0.8);
+    --glass-bg: rgba(17, 29, 53, 0.9);
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* LIGHT THEME - Neumorphism */
-[data-theme="light"] {
-    --bg-primary: #e8eef5;
-    --bg-secondary: #f0f4f8;
-    --bg-card: #e8eef5;
-    --bg-input: #e0e5ec;
-    --text-primary: #1e3a5f;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --border-color: transparent;
+/* LIGHT THEME - body.light-mode ile senkron */
+body.light-mode .adk-pro-wrapper {
+    --bg-primary: #f1f5f9;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border-color: #cbd5e1;
     --shadow-light: rgba(255, 255, 255, 0.8);
-    --shadow-dark: rgba(163, 177, 198, 0.6);
+    --shadow-dark: rgba(0, 0, 0, 0.1);
     --neumorphic-light: #ffffff;
-    --neumorphic-dark: rgba(163, 177, 198, 0.5);
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.5);
+    --neumorphic-dark: rgba(0, 0, 0, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(203, 213, 225, 0.5);
 }
 
 /* BASE STYLES */
@@ -470,7 +470,7 @@ include __DIR__ . '/../includes/header.php';
     border-bottom: 1px solid var(--border-color);
 }
 
-[data-theme="light"] .adk-section-header {
+body.light-mode .adk-section-header {
     border-bottom: none;
     padding-bottom: 15px;
 }
@@ -822,7 +822,7 @@ include __DIR__ . '/../includes/header.php';
     text-align: center;
 }
 
-[data-theme="light"] .adk-ai-stat {
+body.light-mode .adk-ai-stat {
     background: rgba(255,255,255,0.5);
 }
 
@@ -894,7 +894,7 @@ include __DIR__ . '/../includes/header.php';
     text-align: center;
 }
 
-[data-theme="light"] .adk-piyasa-stat {
+body.light-mode .adk-piyasa-stat {
     background: rgba(255,255,255,0.5);
 }
 
@@ -1197,7 +1197,7 @@ include __DIR__ . '/../includes/header.php';
     background: var(--bg-input);
 }
 
-[data-theme="light"] .adk-upload-area {
+body.light-mode .adk-upload-area {
     border-color: #cbd5e1;
 }
 
@@ -1639,14 +1639,14 @@ include __DIR__ . '/../includes/header.php';
 }
 </style>
 
-<div class="adk-pro-wrapper" data-theme="<?= htmlspecialchars($tema) ?>">
+<div class="adk-pro-wrapper">
 
     <!-- THEME TOGGLE -->
     <div class="theme-toggle">
-        <button type="button" class="theme-toggle-btn <?= $tema === 'light' ? 'active' : '' ?>" data-theme="light" onclick="setTheme('light')" title="Açık Tema">
+        <button type="button" class="theme-toggle-btn <?= $isLightMode ? 'active' : '' ?>" data-theme="light" onclick="setTheme('light')" title="Açık Tema">
             <i class="fas fa-sun"></i>
         </button>
-        <button type="button" class="theme-toggle-btn <?= $tema === 'dark' ? 'active' : '' ?>" data-theme="dark" onclick="setTheme('dark')" title="Koyu Tema">
+        <button type="button" class="theme-toggle-btn <?= !$isLightMode ? 'active' : '' ?>" data-theme="dark" onclick="setTheme('dark')" title="Koyu Tema">
             <i class="fas fa-moon"></i>
         </button>
     </div>
@@ -2315,14 +2315,36 @@ include __DIR__ . '/../includes/header.php';
 // ADK PRO v2.0 - JAVASCRIPT
 // ========================================
 
-// TEMA DEĞİŞTİRME
+// TEMA DEĞİŞTİRME - Ana site ile senkron
 function setTheme(theme) {
-    document.querySelector('.adk-pro-wrapper').setAttribute('data-theme', theme);
-    document.cookie = `adk_tema=${theme};path=/;max-age=31536000`;
+    // Ana site temasını değiştir
+    if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        document.documentElement.classList.add('light-mode');
+    } else {
+        document.body.classList.remove('light-mode');
+        document.documentElement.classList.remove('light-mode');
+    }
 
+    // Cookie'yi ana site ile aynı şekilde ayarla
+    document.cookie = `mr_theme=${theme};path=/;max-age=31536000;SameSite=Lax`;
+
+    // Toggle butonlarını güncelle
     document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.theme === theme);
     });
+
+    // Ana sitedeki tema ikonunu da güncelle
+    var mainThemeIcon = document.getElementById('themeIcon');
+    if (mainThemeIcon) {
+        if (theme === 'light') {
+            mainThemeIcon.classList.remove('fa-moon');
+            mainThemeIcon.classList.add('fa-sun');
+        } else {
+            mainThemeIcon.classList.remove('fa-sun');
+            mainThemeIcon.classList.add('fa-moon');
+        }
+    }
 }
 
 // TAB SİSTEMİ

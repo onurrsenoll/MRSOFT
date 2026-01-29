@@ -83,15 +83,16 @@ include __DIR__ . '/../includes/header.php';
 ?>
 
 <style>
+/* DOSYA DETAY - TEMA UYUMLU STİLLER */
 .detay-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
 @media (max-width: 1200px) { .detay-grid { grid-template-columns: 1fr; } }
 
-.info-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-.info-card-title { font-size: 14px; font-weight: 700; color: #3b82f6; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
-.info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e293b; }
+.info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px; transition: var(--transition); }
+.info-card-title { font-size: 14px; font-weight: 700; color: var(--mr-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
 .info-row:last-child { border-bottom: none; }
-.info-label { color: #64748b; font-size: 12px; }
-.info-value { color: #f1f5f9; font-weight: 600; font-size: 13px; text-align: right; }
+.info-label { color: var(--text3); font-size: 12px; }
+.info-value { color: var(--text); font-weight: 600; font-size: 13px; text-align: right; }
 
 .badge-big { padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 700; }
 .badge-adk { background: rgba(236, 72, 153, 0.2); color: #ec4899; }
@@ -99,25 +100,25 @@ include __DIR__ . '/../includes/header.php';
 .badge-mdk { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
 
 .action-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-.btn-action { padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
+.btn-action { padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: var(--transition); }
 .btn-hesapla { background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff; }
 .btn-edit { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; }
 .btn-evrak { background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; }
-.btn-back { background: #334155; color: #f1f5f9; }
+.btn-back { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); }
 
-.hesaplama-card { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 15px; margin-bottom: 10px; }
-.hesaplama-card:hover { border-color: #3b82f6; }
-.hesaplama-tarih { font-size: 11px; color: #64748b; }
-.hesaplama-tutar { font-size: 18px; font-weight: 800; color: #10b981; margin-top: 5px; }
-.hesaplama-link { color: #3b82f6; font-size: 12px; text-decoration: none; }
+.hesaplama-card { background: var(--bg-input); border: 1px solid var(--border); border-radius: 8px; padding: 15px; margin-bottom: 10px; transition: var(--transition); }
+.hesaplama-card:hover { border-color: var(--mr-blue); }
+.hesaplama-tarih { font-size: 11px; color: var(--text3); }
+.hesaplama-tutar { font-size: 18px; font-weight: 800; color: #10b981; margin-top: 5px; font-family: 'Manrope', sans-serif; }
+.hesaplama-link { color: var(--mr-blue); font-size: 12px; text-decoration: none; }
 
 .timeline { position: relative; padding-left: 20px; }
-.timeline::before { content: ''; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: #334155; }
+.timeline::before { content: ''; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: var(--border); }
 .timeline-item { position: relative; padding-bottom: 15px; }
-.timeline-item::before { content: ''; position: absolute; left: -20px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: #3b82f6; border: 2px solid #1e293b; }
-.timeline-content { background: #0f172a; padding: 10px 15px; border-radius: 8px; }
-.timeline-title { font-weight: 600; color: #f1f5f9; font-size: 13px; }
-.timeline-meta { font-size: 11px; color: #64748b; margin-top: 5px; }
+.timeline-item::before { content: ''; position: absolute; left: -20px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--mr-blue); border: 2px solid var(--bg-card); }
+.timeline-content { background: var(--bg-input); padding: 10px 15px; border-radius: 8px; }
+.timeline-title { font-weight: 600; color: var(--text); font-size: 13px; }
+.timeline-meta { font-size: 11px; color: var(--text3); margin-top: 5px; }
 </style>
 
 <div class="page-title">

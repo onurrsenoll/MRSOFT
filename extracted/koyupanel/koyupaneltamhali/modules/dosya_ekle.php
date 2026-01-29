@@ -170,8 +170,9 @@ include __DIR__ . '/../includes/header.php';
 ?>
 
 <style>
-.form-section { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-.section-header { font-size: 14px; font-weight: 700; color: #3b82f6; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+/* DOSYA EKLE - TEMA UYUMLU STİLLER */
+.form-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px; transition: var(--transition); }
+.section-header { font-size: 14px; font-weight: 700; color: var(--mr-blue); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .section-header i { font-size: 16px; }
 .form-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px; }
 .form-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px; }
@@ -179,33 +180,33 @@ include __DIR__ . '/../includes/header.php';
 @media (max-width: 1200px) { .form-row { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .form-row, .form-row-3, .form-row-2 { grid-template-columns: 1fr; } }
 .frm-grp { display: flex; flex-direction: column; }
-.frm-lbl { font-size: 11px; font-weight: 600; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; }
+.frm-lbl { font-size: 11px; font-weight: 600; color: var(--text3); margin-bottom: 5px; text-transform: uppercase; }
 .frm-lbl .req { color: #ef4444; }
-.frm-in, .frm-sel, .frm-ta { width: 100%; padding: 10px 12px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #f1f5f9; font-size: 13px; }
-.frm-in:focus, .frm-sel:focus, .frm-ta:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+.frm-in, .frm-sel, .frm-ta { width: 100%; padding: 10px 12px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 13px; transition: var(--transition); }
+.frm-in:focus, .frm-sel:focus, .frm-ta:focus { outline: none; border-color: var(--mr-blue); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
 .frm-ta { resize: vertical; min-height: 80px; }
 
 .toggle-group { display: flex; gap: 0; margin-bottom: 15px; }
-.toggle-btn { flex: 1; padding: 12px 20px; background: #0f172a; border: 1px solid #334155; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-align: center; }
+.toggle-btn { flex: 1; padding: 12px 20px; background: var(--bg-input); border: 1px solid var(--border); color: var(--text3); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-align: center; }
 .toggle-btn:first-child { border-radius: 8px 0 0 8px; }
 .toggle-btn:last-child { border-radius: 0 8px 8px 0; }
-.toggle-btn.active { background: #3b82f6; border-color: #3b82f6; color: #fff; }
-.toggle-btn:hover:not(.active) { background: #1e293b; }
+.toggle-btn.active { background: var(--gradient-btn); border-color: transparent; color: #fff; }
+.toggle-btn:hover:not(.active) { background: var(--bg-card-alt); }
 
 .radio-group { display: flex; gap: 15px; flex-wrap: wrap; }
-.radio-item { display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; cursor: pointer; font-size: 12px; color: #cbd5e1; transition: all 0.2s; }
-.radio-item:hover { border-color: #3b82f6; }
-.radio-item input:checked + span { color: #3b82f6; font-weight: 600; }
-.radio-item input { accent-color: #3b82f6; }
+.radio-item { display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 12px; color: var(--text2); transition: all 0.2s; }
+.radio-item:hover { border-color: var(--mr-blue); }
+.radio-item input:checked + span { color: var(--mr-blue); font-weight: 600; }
+.radio-item input { accent-color: var(--mr-blue); }
 
-.form-actions { display: flex; gap: 15px; justify-content: flex-end; margin-top: 30px; padding-top: 20px; border-top: 1px solid #334155; }
+.form-actions { display: flex; gap: 15px; justify-content: flex-end; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
 .btn { padding: 12px 25px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border: none; text-decoration: none; }
 .btn-suc { background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff; }
-.btn-sec { background: #334155; color: #f1f5f9; }
+.btn-sec { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); }
 .btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
 .hidden { display: none !important; }
-.info-tip { font-size: 10px; color: #64748b; margin-top: 3px; }
+.info-tip { font-size: 10px; color: var(--text3); margin-top: 3px; }
 </style>
 
 <div class="page-title"><i class="fas fa-plus-circle"></i> YENİ DOSYA EKLE</div>

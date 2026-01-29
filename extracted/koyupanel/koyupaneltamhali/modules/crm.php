@@ -101,6 +101,72 @@ if (isset($_GET['convert']) && intval($_GET['convert']) > 0) {
 include __DIR__ . '/../includes/header.php';
 ?>
 
+<style>
+/* CRM MODAL - TEMA UYUMLU */
+.crm-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+.crm-modal {
+    background: var(--bg-card);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow: auto;
+    border: 2px solid var(--mr-blue);
+    box-shadow: var(--shadow-lg);
+}
+.crm-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.crm-modal-header h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 16px;
+}
+.crm-modal-header h3 i {
+    color: var(--mr-blue);
+    margin-right: 10px;
+}
+.crm-modal-close {
+    background: none;
+    border: none;
+    color: var(--text3);
+    font-size: 24px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.crm-modal-close:hover {
+    color: var(--danger);
+}
+.crm-modal-body {
+    padding: 20px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 <div class="page-title">
     <i class="fas fa-headset"></i> CRM
     <button onclick="document.getElementById('crmModal').style.display='flex'" class="btn btn-suc" style="margin-left:auto;font-size:12px">
@@ -117,13 +183,13 @@ include __DIR__ . '/../includes/header.php';
 <?php endif; ?>
 
 <!-- YENİ KAYIT MODAL -->
-<div id="crmModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:99999;align-items:center;justify-content:center;padding:20px">
-    <div style="background:#1e293b;border-radius:12px;width:100%;max-width:700px;max-height:90vh;overflow:auto;border:2px solid #3b82f6">
-        <div style="padding:20px;border-bottom:1px solid #334155;display:flex;justify-content:space-between;align-items:center">
-            <h3 style="margin:0;color:#f1f5f9;font-size:16px"><i class="fas fa-plus-circle"></i> YENİ CRM KAYDI</h3>
-            <button onclick="document.getElementById('crmModal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer">&times;</button>
+<div id="crmModal" class="crm-modal-overlay">
+    <div class="crm-modal">
+        <div class="crm-modal-header">
+            <h3><i class="fas fa-plus-circle"></i> YENİ CRM KAYDI</h3>
+            <button onclick="document.getElementById('crmModal').style.display='none'" class="crm-modal-close">&times;</button>
         </div>
-        <form method="POST" style="padding:20px">
+        <form method="POST" class="crm-modal-body">
             <input type="hidden" name="action" value="ekle">
             <div class="form-grid">
                 <div class="frm-grp">
