@@ -69,30 +69,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         body {
             min-height: 100vh;
-            background:
-                url('admin/img/login-bg.png') no-repeat center center fixed,
-                linear-gradient(135deg, #020c1b 0%, #0a1628 50%, #0d1f3c 100%);
-            background-size: cover;
+            background: #020c1b url('admin/img/login-bg.png') no-repeat center center fixed;
+            background-size: contain;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 8%;
+            padding-right: 5%;
         }
 
         .login-wrapper {
             width: 100%;
-            max-width: 380px;
+            max-width: 350px;
             padding: 20px;
         }
 
         .login-form {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            padding: 40px 30px;
         }
 
         .form-group {
@@ -102,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .form-group label {
             display: block;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.9rem;
             margin-bottom: 8px;
             font-weight: 500;
@@ -119,6 +113,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             transform: translateY(-50%);
             color: rgba(255, 255, 255, 0.5);
             font-size: 1.1rem;
+            z-index: 2;
+            transition: color 0.3s ease;
         }
 
         .form-group input {
@@ -126,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 15px 15px 15px 45px;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
+            border-radius: 10px;
             color: #fff;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -136,18 +132,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .form-group input:focus {
-            outline: none;
+        /* Yazı yazıldığında beyaz dolsun */
+        .form-group input:focus,
+        .form-group input:not(:placeholder-shown) {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a2e;
             border-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
+        }
+
+        .form-group input:focus::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group input:focus + .input-wrapper i,
+        .form-group input:not(:placeholder-shown) ~ i {
+            color: #1a1a2e;
+        }
+
+        /* Input içindeki icon rengi değişimi için */
+        .form-group .input-wrapper:has(input:focus) i,
+        .form-group .input-wrapper:has(input:not(:placeholder-shown)) i {
+            color: #1a1a2e;
         }
 
         .form-check {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .form-check-label {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
         }
 
@@ -166,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
             padding: 16px;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
@@ -210,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             bottom: -2px;
             background: linear-gradient(45deg, #00d4ff, #0099cc, #00ffcc, #00d4ff);
             background-size: 400% 400%;
-            border-radius: 14px;
+            border-radius: 12px;
             z-index: -1;
             animation: borderGlow 3s ease-in-out infinite;
             opacity: 0.7;
@@ -346,7 +359,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             body {
                 justify-content: center;
                 padding: 20px;
-                background-position: left center;
+                background-size: cover;
             }
 
             .login-wrapper {
@@ -354,7 +367,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             .login-form {
-                padding: 40px 25px;
+                padding: 30px 20px;
             }
         }
     </style>
