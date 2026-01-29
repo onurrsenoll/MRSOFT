@@ -77,6 +77,10 @@ body{padding-top:55px!important}
             <i class="fas fa-calculator"></i> HESAPLAMA
             <i class="fas fa-chevron-down" style="font-size:8px;margin-left:5px"></i>
             <div class="dropdown">
+                <a href="adk_hesaplama_pro.php" class="drop-item" style="background:linear-gradient(135deg,#1a237e,#1976d2);color:#fff;font-weight:600">
+                    <i class="fas fa-robot"></i> ADK HESAPLAMA PRO
+                </a>
+                <div class="drop-div"></div>
                 <?php if (hasPermission('hesap_adk')): ?>
                 <a href="hesap_adk.php" class="drop-item">
                     <i class="fas fa-car-crash"></i> ARAÇ DEĞER KAYBI
