@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR HASAR - Modern Tech Icon Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function() {
+            var theme = document.cookie.match(/mr_theme=([^;]+)/);
+            theme = theme ? theme[1] : 'dark';
+            if (theme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-body: #0a1628;
+            --bg-card: #111d35;
+            --bg-input: #0d1a2d;
+            --border: #1e3a5f;
+            --text: #ffffff;
+            --text2: #94a3b8;
+            --text3: #64748b;
+            --mr-navy: #1e3a5f;
+            --mr-blue: #3b82f6;
+            --mr-cyan: #0ea5e9;
+            --gradient-btn: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #0ea5e9 100%);
+            --gradient-btn-hover: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #0284c7 100%);
+            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+
+            /* Icon Gradient Variables */
+            --icon-gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            --icon-gradient-2: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #06b6d4 100%);
+            --icon-gradient-3: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
+            --icon-gradient-4: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+            --icon-gradient-5: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #6366f1 100%);
+
+            /* Glow Colors */
+            --glow-purple: rgba(139, 92, 246, 0.5);
+            --glow-blue: rgba(59, 130, 246, 0.5);
+            --glow-cyan: rgba(14, 165, 233, 0.5);
+            --glow-green: rgba(16, 185, 129, 0.5);
+            --glow-orange: rgba(249, 115, 22, 0.5);
+        }
+
+        body.light-mode {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-input: #e2e8f0;
+            --border: #cbd5e1;
+            --text: #1e293b;
+            --text2: #64748b;
+            --text3: #94a3b8;
+            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-body);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 20px;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .demo-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .demo-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: var(--gradient-btn);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demo-subtitle {
+            font-size: 14px;
+            color: var(--text2);
+            margin-bottom: 30px;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle-demo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .theme-btn-demo {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-size: 18px;
+            transition: var(--transition);
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--mr-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-btn-demo:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: scale(1.05);
+        }
+
+        body.light-mode .theme-btn-demo {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(59, 130, 246, 0.1));
+            color: var(--mr-blue);
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+        }
+
+        .section:hover .section-title i {
+            background: var(--gradient-btn);
+            color: #fff;
+            transform: rotate(-5deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        /* Stat Card - Full Implementation */
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .stat-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stat Icon - Glassmorphism Tech */
+        .stat-icon {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin: 0 auto 18px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        /* Glassmorphism Border */
+        .stat-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Glow Effect */
+        .stat-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-card:hover .stat-icon::after {
+            opacity: 1;
+        }
+
+        /* Blue Icon */
+        .stat-icon.blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%);
+            color: #60a5fa;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .stat-icon.blue::after {
+            box-shadow: 0 0 40px var(--glow-blue), 0 0 80px rgba(59, 130, 246, 0.3);
+        }
+
+        .stat-card:hover .stat-icon.blue {
+            background: var(--icon-gradient-2);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Green Icon */
+        .stat-icon.green {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(20, 184, 166, 0.1) 100%);
+            color: #34d399;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15), inset 0 0 20px rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .stat-card:hover .stat-icon.green {
+            background: var(--icon-gradient-3);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Orange Icon */
+        .stat-icon.orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(245, 158, 11, 0.1) 100%);
+            color: #fb923c;
+            box-shadow: 0 8px 32px rgba(249, 115, 22, 0.15), inset 0 0 20px rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .stat-card:hover .stat-icon.orange {
+            background: var(--icon-gradient-4);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(249, 115, 22, 0.4), 0 0 60px rgba(249, 115, 22, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Purple Icon */
+        .stat-icon.purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(168, 85, 247, 0.1) 100%);
+            color: #a78bfa;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15), inset 0 0 20px rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .stat-card:hover .stat-icon.purple {
+            background: var(--icon-gradient-1);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Cyan Icon */
+        .stat-icon.cyan {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+            color: #22d3ee;
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15), inset 0 0 20px rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .stat-card:hover .stat-icon.cyan {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4, #14b8a6);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.4), 0 0 60px rgba(14, 165, 233, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Red Icon */
+        .stat-icon.red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(248, 113, 113, 0.1) 100%);
+            color: #f87171;
+            box-shadow: 0 8px 32px rgba(239, 68, 68, 0.15), inset 0 0 20px rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .stat-card:hover .stat-icon.red {
+            background: linear-gradient(135deg, #ef4444, #f97316, #fbbf24);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(239, 68, 68, 0.4), 0 0 60px rgba(239, 68, 68, 0.2);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Floating Animation */
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .stat-card:hover .stat-icon i {
+            animation: float-icon 1s ease-in-out infinite;
+        }
+
+        /* Stat Title */
+        .stat-title {
+            font-size: 11px;
+            color: var(--text2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        /* Action Icons Section */
+        .action-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .action-btn {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-btn);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .action-btn:hover::before {
+            opacity: 1;
+        }
+
+        .action-btn:hover {
+            border-color: transparent;
+            color: #fff;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .action-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation Demo */
+        .nav-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .nav-item-demo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text2);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .nav-item-demo:hover {
+            color: var(--mr-blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-item-demo:hover i {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 8px var(--mr-blue));
+        }
+
+        .nav-item-demo i {
+            transition: var(--transition);
+        }
+
+        .nav-item-demo.active {
+            background: var(--gradient-btn);
+            color: #fff;
+        }
+
+        .nav-item-demo.active i {
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+        }
+
+        /* Dropdown Demo */
+        .dropdown-demo {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 15px;
+            max-width: 300px;
+        }
+
+        .drop-item-demo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text2);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 5px;
+            text-decoration: none;
+        }
+
+        .drop-item-demo:last-child {
+            margin-bottom: 0;
+        }
+
+        .drop-item-demo:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text);
+        }
+
+        .drop-item-demo i {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--mr-blue);
+        }
+
+        .drop-item-demo:hover i {
+            background: var(--gradient-btn);
+            color: #fff;
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        /* ADK PRO Special */
+        .drop-item-demo.adk-pro {
+            background: var(--gradient-btn) !important;
+            color: #fff !important;
+            font-weight: 600;
+        }
+
+        .drop-item-demo.adk-pro i {
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            color: #fff;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+            50% { box-shadow: 0 0 25px rgba(255,255,255,0.6), 0 0 50px rgba(99, 102, 241, 0.4); }
+        }
+
+        .drop-item-demo.adk-pro:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4) !important;
+        }
+
+        /* Form Icons */
+        .form-demo {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 400px;
+        }
+
+        .form-group-demo {
+            margin-bottom: 20px;
+        }
+
+        .form-label-demo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text2);
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-label-demo i {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 11px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+            color: var(--mr-blue);
+        }
+
+        .form-input-demo {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-input-demo:focus {
+            border-color: var(--mr-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Alert Icons */
+        .alert-demo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .alert-demo i {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        .alert-success i {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
+        }
+
+        .alert-warning i {
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .alert-danger i {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #3b82f6;
+        }
+
+        .alert-info i {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Light Mode Adjustments */
+        body.light-mode .stat-icon {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        body.light-mode .stat-icon.blue { border-color: rgba(59, 130, 246, 0.3); }
+        body.light-mode .stat-icon.green { border-color: rgba(16, 185, 129, 0.3); }
+        body.light-mode .stat-icon.orange { border-color: rgba(249, 115, 22, 0.3); }
+        body.light-mode .stat-icon.purple { border-color: rgba(139, 92, 246, 0.3); }
+        body.light-mode .stat-icon.cyan { border-color: rgba(14, 165, 233, 0.3); }
+        body.light-mode .stat-icon.red { border-color: rgba(239, 68, 68, 0.3); }
+
+        body.light-mode .drop-item-demo i {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        body.light-mode .action-btn {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="demo-header">
+            <div class="theme-toggle-demo">
+                <button type="button" class="theme-btn-demo" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+            <h1 class="demo-title">MODERN TECH ICON SYSTEM</h1>
+            <p class="demo-subtitle">MR HASAR DANIŞMANLIK - Glassmorphism, Gradient & Neon Glow Effects</p>
+        </div>
+
+        <!-- STAT CARD ICONS -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-pie"></i>
+                STAT CARD ICONS (Hover to see effects)
+            </h2>
+            <div class="icon-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="stat-title">TOPLAM DOSYA</div>
+                    <div class="stat-value">1,247</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-title">TAMAMLANAN</div>
+                    <div class="stat-value">892</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-title">BEKLEYEN</div>
+                    <div class="stat-value">156</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="stat-title">HESAPLAMALAR</div>
+                    <div class="stat-value">3,456</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon cyan">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-title">MÜŞTERİLER</div>
+                    <div class="stat-value">567</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-title">ACİL İŞLEM</div>
+                    <div class="stat-value">12</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION ICONS -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-compass"></i>
+                NAVIGATION ICONS
+            </h2>
+            <div class="nav-demo">
+                <a class="nav-item-demo active">
+                    <i class="fas fa-home"></i> ANASAYFA
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-folder-open"></i> DOSYALAR
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-calculator"></i> HESAPLAMA
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-users"></i> ORTAKLAR
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-cogs"></i> TANIMLAMALAR
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-wallet"></i> MUHASEBE
+                </a>
+                <a class="nav-item-demo">
+                    <i class="fas fa-sliders-h"></i> SİSTEM
+                </a>
+            </div>
+        </div>
+
+        <!-- DROPDOWN ICONS -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-list-ul"></i>
+                DROPDOWN MENU ICONS
+            </h2>
+            <div class="grid-2">
+                <div class="dropdown-demo">
+                    <a class="drop-item-demo adk-pro">
+                        <i class="fas fa-robot"></i> ADK HESAPLAMA PRO
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-car-crash"></i> ARAÇ DEĞER KAYBI
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-wheelchair"></i> MALULİYET HESAPLAMA
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-file-invoice-dollar"></i> TAZMİNAT HESAPLAMA
+                    </a>
+                </div>
+                <div class="dropdown-demo">
+                    <a class="drop-item-demo">
+                        <i class="fas fa-cog"></i> GENEL AYARLAR
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-user-shield"></i> YETKİ YÖNETİMİ
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-users-cog"></i> KULLANICI YÖNETİMİ
+                    </a>
+                    <a class="drop-item-demo">
+                        <i class="fas fa-plug"></i> API AYARLARI
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACTION ICONS -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-mouse-pointer"></i>
+                ACTION BUTTON ICONS
+            </h2>
+            <div class="action-grid">
+                <a class="action-btn" title="Görüntüle">
+                    <i class="fas fa-eye"></i>
+                </a>
+                <a class="action-btn" title="Düzenle">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="action-btn" title="Sil">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                <a class="action-btn" title="Yazdır">
+                    <i class="fas fa-print"></i>
+                </a>
+                <a class="action-btn" title="İndir">
+                    <i class="fas fa-download"></i>
+                </a>
+                <a class="action-btn" title="Paylaş">
+                    <i class="fas fa-share-alt"></i>
+                </a>
+                <a class="action-btn" title="Kopyala">
+                    <i class="fas fa-copy"></i>
+                </a>
+                <a class="action-btn" title="Yenile">
+                    <i class="fas fa-sync-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- FORM & ALERT ICONS -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-edit"></i>
+                FORM & ALERT ICONS
+            </h2>
+            <div class="grid-2">
+                <div class="form-demo">
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">
+                            <i class="fas fa-user"></i> KULLANICI ADI
+                        </label>
+                        <input type="text" class="form-input-demo" placeholder="Kullanıcı adınızı girin">
+                    </div>
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">
+                            <i class="fas fa-lock"></i> ŞİFRE
+                        </label>
+                        <input type="password" class="form-input-demo" placeholder="Şifrenizi girin">
+                    </div>
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">
+                            <i class="fas fa-envelope"></i> E-POSTA
+                        </label>
+                        <input type="email" class="form-input-demo" placeholder="E-posta adresiniz">
+                    </div>
+                </div>
+                <div>
+                    <div class="alert-demo alert-success">
+                        <i class="fas fa-check-circle"></i>
+                        İşlem başarıyla tamamlandı.
+                    </div>
+                    <div class="alert-demo alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Dikkat! Lütfen formu kontrol edin.
+                    </div>
+                    <div class="alert-demo alert-danger">
+                        <i class="fas fa-times-circle"></i>
+                        Hata! İşlem gerçekleştirilemedi.
+                    </div>
+                    <div class="alert-demo alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        Bilgi: Değişiklikler kaydedildi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            var body = document.body;
+            var icon = document.getElementById('themeIcon');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                document.documentElement.classList.remove('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                document.cookie = 'mr_theme=dark;path=/;max-age=31536000;SameSite=Lax';
+            } else {
+                body.classList.add('light-mode');
+                document.documentElement.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                document.cookie = 'mr_theme=light;path=/;max-age=31536000;SameSite=Lax';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var icon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>

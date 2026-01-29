@@ -1,0 +1,918 @@
+/*
+ * MR HASAR DANIŞMANLIK - MODERN TECH ICON SYSTEM V2.0
+ * Premium Glassmorphism, Holographic & Neon Glow Effects
+ * Inspired by 3D Digital Art Style
+ * 2025
+ */
+
+/* ========================================
+   ICON VARIABLES - ENHANCED
+   ======================================== */
+:root {
+    /* Premium Gradient Colors */
+    --icon-gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    --icon-gradient-2: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #06b6d4 100%);
+    --icon-gradient-3: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
+    --icon-gradient-4: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+    --icon-gradient-5: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #6366f1 100%);
+    --icon-gradient-6: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 50%, #0ea5e9 100%);
+
+    /* Holographic Gradient */
+    --icon-holographic: linear-gradient(135deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #6b8dd6 50%,
+        #8e54e9 75%,
+        #667eea 100%);
+
+    /* Neon Glow Colors */
+    --glow-purple: rgba(139, 92, 246, 0.6);
+    --glow-blue: rgba(59, 130, 246, 0.6);
+    --glow-cyan: rgba(14, 165, 233, 0.6);
+    --glow-green: rgba(16, 185, 129, 0.6);
+    --glow-orange: rgba(249, 115, 22, 0.6);
+    --glow-pink: rgba(236, 72, 153, 0.6);
+
+    /* Neon Ring Colors */
+    --neon-blue: #00d4ff;
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+    --neon-cyan: #22d3ee;
+}
+
+/* ========================================
+   STAT CARD ICONS - PREMIUM GLASSMORPHISM
+   ======================================== */
+.stat-icon,
+.card-icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Glassmorphism Glass Border */
+.stat-icon::before,
+.card-icon::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 13px;
+    padding: 1px;
+    background: linear-gradient(135deg,
+        rgba(255,255,255,0.5) 0%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.3) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Neon Glow Ring Effect */
+.stat-icon::after,
+.card-icon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.stat-card:hover .stat-icon::after,
+.stat-card:hover .card-icon::after,
+.card:hover .card-icon::after,
+.cards > .card:hover .card-icon::after {
+    opacity: 1;
+}
+
+/* ========================================
+   BLUE ICON - OCEAN GRADIENT
+   ======================================== */
+.stat-icon.blue,
+.card-icon.blue {
+    background: linear-gradient(145deg,
+        rgba(59, 130, 246, 0.25) 0%,
+        rgba(14, 165, 233, 0.15) 50%,
+        rgba(6, 182, 212, 0.1) 100%);
+    color: #60a5fa;
+    box-shadow:
+        0 8px 32px rgba(59, 130, 246, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.blue::after,
+.card-icon.blue::after {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px var(--neon-blue),
+        0 0 60px rgba(59, 130, 246, 0.3),
+        inset 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.stat-card:hover .stat-icon.blue,
+.card:hover .card-icon.blue,
+.cards > .card:hover .card-icon.blue {
+    background: var(--icon-gradient-2);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(59, 130, 246, 0.5),
+        0 0 50px rgba(14, 165, 233, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   GREEN ICON - EMERALD GRADIENT
+   ======================================== */
+.stat-icon.green,
+.card-icon.green {
+    background: linear-gradient(145deg,
+        rgba(16, 185, 129, 0.25) 0%,
+        rgba(20, 184, 166, 0.15) 50%,
+        rgba(6, 182, 212, 0.1) 100%);
+    color: #34d399;
+    box-shadow:
+        0 8px 32px rgba(16, 185, 129, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.green::after,
+.card-icon.green::after {
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px rgba(16, 185, 129, 0.5),
+        0 0 60px rgba(16, 185, 129, 0.3);
+}
+
+.stat-card:hover .stat-icon.green,
+.card:hover .card-icon.green,
+.cards > .card:hover .card-icon.green {
+    background: var(--icon-gradient-3);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(16, 185, 129, 0.5),
+        0 0 50px rgba(20, 184, 166, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   ORANGE ICON - SUNSET GRADIENT
+   ======================================== */
+.stat-icon.orange,
+.card-icon.orange {
+    background: linear-gradient(145deg,
+        rgba(249, 115, 22, 0.25) 0%,
+        rgba(245, 158, 11, 0.15) 50%,
+        rgba(251, 191, 36, 0.1) 100%);
+    color: #fb923c;
+    box-shadow:
+        0 8px 32px rgba(249, 115, 22, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.orange::after,
+.card-icon.orange::after {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px rgba(249, 115, 22, 0.5),
+        0 0 60px rgba(249, 115, 22, 0.3);
+}
+
+.stat-card:hover .stat-icon.orange,
+.card:hover .card-icon.orange,
+.cards > .card:hover .card-icon.orange {
+    background: var(--icon-gradient-4);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(249, 115, 22, 0.5),
+        0 0 50px rgba(245, 158, 11, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   PURPLE ICON - COSMIC GRADIENT
+   ======================================== */
+.stat-icon.purple,
+.card-icon.purple {
+    background: linear-gradient(145deg,
+        rgba(139, 92, 246, 0.25) 0%,
+        rgba(168, 85, 247, 0.15) 50%,
+        rgba(192, 132, 252, 0.1) 100%);
+    color: #a78bfa;
+    box-shadow:
+        0 8px 32px rgba(139, 92, 246, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.purple::after,
+.card-icon.purple::after {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px var(--neon-purple),
+        0 0 60px rgba(139, 92, 246, 0.3);
+}
+
+.stat-card:hover .stat-icon.purple,
+.card:hover .card-icon.purple,
+.cards > .card:hover .card-icon.purple {
+    background: var(--icon-gradient-1);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.5),
+        0 0 50px rgba(168, 85, 247, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   CYAN ICON - ELECTRIC GRADIENT
+   ======================================== */
+.stat-icon.cyan,
+.card-icon.cyan {
+    background: linear-gradient(145deg,
+        rgba(14, 165, 233, 0.25) 0%,
+        rgba(6, 182, 212, 0.15) 50%,
+        rgba(34, 211, 238, 0.1) 100%);
+    color: #22d3ee;
+    box-shadow:
+        0 8px 32px rgba(14, 165, 233, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(14, 165, 233, 0.15);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.cyan::after,
+.card-icon.cyan::after {
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px var(--neon-cyan),
+        0 0 60px rgba(14, 165, 233, 0.3);
+}
+
+.stat-card:hover .stat-icon.cyan,
+.card:hover .card-icon.cyan,
+.cards > .card:hover .card-icon.cyan {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4, #14b8a6);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(14, 165, 233, 0.5),
+        0 0 50px rgba(6, 182, 212, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   RED ICON - FIRE GRADIENT
+   ======================================== */
+.stat-icon.red,
+.card-icon.red {
+    background: linear-gradient(145deg,
+        rgba(239, 68, 68, 0.25) 0%,
+        rgba(248, 113, 113, 0.15) 50%,
+        rgba(252, 165, 165, 0.1) 100%);
+    color: #f87171;
+    box-shadow:
+        0 8px 32px rgba(239, 68, 68, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 10px rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.stat-icon.red::after,
+.card-icon.red::after {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, transparent 70%);
+    box-shadow:
+        0 0 30px rgba(239, 68, 68, 0.5),
+        0 0 60px rgba(239, 68, 68, 0.3);
+}
+
+.stat-card:hover .stat-icon.red,
+.card:hover .card-icon.red,
+.cards > .card:hover .card-icon.red {
+    background: linear-gradient(135deg, #ef4444, #f97316, #fbbf24);
+    color: #fff;
+    box-shadow:
+        0 15px 40px rgba(239, 68, 68, 0.5),
+        0 0 50px rgba(249, 115, 22, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(-3deg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   ICON FLOAT ANIMATION
+   ======================================== */
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0) scale(1.1) rotate(-3deg); }
+    50% { transform: translateY(-4px) scale(1.1) rotate(-3deg); }
+}
+
+.stat-card:hover .stat-icon i,
+.stat-card:hover .card-icon i,
+.card:hover .card-icon i,
+.cards > .card:hover .card-icon i {
+    animation: float-icon 1.5s ease-in-out infinite;
+}
+
+/* ========================================
+   NEON PULSE ANIMATION
+   ======================================== */
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px currentColor,
+            0 0 40px currentColor,
+            0 0 60px currentColor;
+    }
+    50% {
+        box-shadow:
+            0 0 30px currentColor,
+            0 0 60px currentColor,
+            0 0 90px currentColor;
+    }
+}
+
+/* ========================================
+   NAVIGATION ICONS - TECH STYLE
+   ======================================== */
+.nav-item i,
+.menu-item i {
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-item:hover i,
+.menu-item:hover i {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px var(--mr-blue));
+}
+
+.nav-item.active i {
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
+}
+
+/* ========================================
+   DROPDOWN ICONS - PREMIUM GRADIENT HOVER
+   ======================================== */
+.drop-item i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 165, 233, 0.1));
+    color: var(--mr-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.drop-item i::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-btn);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.drop-item:hover i {
+    color: #fff;
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.4),
+        0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.drop-item:hover i::before {
+    opacity: 1;
+}
+
+.drop-item i .fa,
+.drop-item i .fas,
+.drop-item i .far,
+.drop-item i .fab {
+    position: relative;
+    z-index: 1;
+}
+
+/* ADK PRO Icon Special */
+.drop-item.adk-pro i {
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    color: #fff;
+    animation: adk-glow 2s ease-in-out infinite;
+}
+
+@keyframes adk-glow {
+    0%, 100% {
+        box-shadow:
+            0 0 15px rgba(255,255,255,0.3),
+            inset 0 0 10px rgba(255,255,255,0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(255,255,255,0.5),
+            0 0 50px rgba(99, 102, 241, 0.4),
+            inset 0 0 15px rgba(255,255,255,0.2);
+    }
+}
+
+/* ========================================
+   ACTION ICONS - FUTURISTIC BUTTONS
+   ======================================== */
+.action-icons a,
+.table-actions a,
+.table-actions button,
+.icons a.ic,
+.ic {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg, var(--bg-input), var(--bg-card));
+    border: 1px solid var(--border);
+    color: var(--text2);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.action-icons a::before,
+.table-actions a::before,
+.table-actions button::before,
+.icons a.ic::before,
+.ic::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-btn);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.action-icons a:hover,
+.table-actions a:hover,
+.table-actions button:hover,
+.icons a.ic:hover,
+.ic:hover {
+    border-color: transparent;
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.4),
+        0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.action-icons a:hover::before,
+.table-actions a:hover::before,
+.table-actions button:hover::before,
+.icons a.ic:hover::before,
+.ic:hover::before {
+    opacity: 1;
+}
+
+.action-icons a i,
+.table-actions a i,
+.table-actions button i,
+.icons a.ic i,
+.ic i {
+    position: relative;
+    z-index: 1;
+}
+
+/* Specific Action Colors */
+.ic.view:hover {
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4), 0 0 20px rgba(14, 165, 233, 0.2);
+}
+.ic.view:hover::before {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+}
+
+.ic.edit:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.2);
+}
+.ic.edit:hover::before {
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+}
+
+.ic.doc:hover {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4), 0 0 20px rgba(139, 92, 246, 0.2);
+}
+.ic.doc:hover::before {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+}
+
+.ic.del:hover {
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.2);
+}
+.ic.del:hover::before {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+/* ========================================
+   SECTION HEADER ICONS - PREMIUM
+   ======================================== */
+.section-header i,
+.panel-title i,
+.card-title i {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    background: linear-gradient(145deg,
+        rgba(99, 102, 241, 0.2),
+        rgba(59, 130, 246, 0.1));
+    color: var(--mr-blue);
+    margin-right: 12px;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 4px 15px rgba(99, 102, 241, 0.15),
+        inset 0 1px 5px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header i::before,
+.panel-title i::before,
+.card-title i::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-btn);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.panel:hover .panel-title i,
+.card:hover .card-title i,
+.form-section:hover .section-header i {
+    color: #fff;
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.4),
+        0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.panel:hover .panel-title i::before,
+.card:hover .card-title i::before,
+.form-section:hover .section-header i::before {
+    opacity: 1;
+}
+
+.section-header i .fa,
+.section-header i .fas,
+.panel-title i .fa,
+.panel-title i .fas,
+.card-title i .fa,
+.card-title i .fas {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   PAGE TITLE ICONS
+   ======================================== */
+.page-title i {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 18px;
+    background: var(--gradient-btn);
+    color: #fff;
+    margin-right: 15px;
+    box-shadow:
+        0 8px 30px rgba(99, 102, 241, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.2),
+        inset 0 2px 10px rgba(255, 255, 255, 0.2);
+    animation: page-icon-glow 3s ease-in-out infinite;
+}
+
+@keyframes page-icon-glow {
+    0%, 100% {
+        box-shadow:
+            0 8px 30px rgba(99, 102, 241, 0.4),
+            0 0 40px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+        box-shadow:
+            0 12px 40px rgba(99, 102, 241, 0.5),
+            0 0 60px rgba(59, 130, 246, 0.3);
+    }
+}
+
+/* ========================================
+   QUICK ACTION BUTTON ICONS
+   ======================================== */
+.quick-btn i,
+.btn i {
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.quick-btn.primary i,
+.btn-primary i,
+.btn-pri i,
+.btn-suc i {
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
+
+.quick-btn:hover i,
+.btn:hover i {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.quick-btn.primary:hover i,
+.btn-primary:hover i {
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+}
+
+/* ========================================
+   FORM LABEL ICONS
+   ======================================== */
+.frm-lbl i,
+.form-label i,
+.f-lbl i {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 10px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+    color: var(--mr-blue);
+    margin-right: 6px;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   TOGGLE BUTTON ICONS
+   ======================================== */
+.toggle-btn i {
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active i {
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    animation: toggle-pulse 0.5s ease;
+}
+
+@keyframes toggle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* ========================================
+   BADGE ICONS
+   ======================================== */
+.badge i {
+    margin-right: 5px;
+    font-size: 9px;
+    filter: drop-shadow(0 0 3px currentColor);
+}
+
+/* ========================================
+   ALERT ICONS
+   ======================================== */
+.alert i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.alert-success i {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(16, 185, 129, 0.1));
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.alert-warning i {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.1));
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.alert-danger i,
+.alert-error i {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(239, 68, 68, 0.1));
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.alert-info i {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.1));
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* ========================================
+   THEME TOGGLE ICON
+   ======================================== */
+.theme-toggle .theme-btn i,
+.theme-btn-login i,
+.theme-btn i {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle .theme-btn:hover i,
+.theme-btn-login:hover i,
+.theme-btn:hover i {
+    transform: rotate(180deg) scale(1.15);
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* ========================================
+   MODAL ICONS
+   ======================================== */
+.modal-title i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 16px;
+    background: var(--gradient-btn);
+    color: #fff;
+    margin-right: 12px;
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.35),
+        0 0 30px rgba(59, 130, 246, 0.2),
+        inset 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   TAB ICONS
+   ======================================== */
+.tab i {
+    margin-right: 8px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.tab.active i {
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+}
+
+.tab:hover i {
+    transform: scale(1.15);
+}
+
+/* ========================================
+   PAGINATION ICONS
+   ======================================== */
+.pagination a i,
+.pagination span i {
+    font-size: 11px;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover i {
+    transform: scale(1.2);
+}
+
+/* ========================================
+   LIGHT MODE ADJUSTMENTS
+   ======================================== */
+body.light-mode .stat-icon,
+body.light-mode .card-icon {
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        inset 0 2px 10px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .stat-icon::before,
+body.light-mode .card-icon::before {
+    background: linear-gradient(135deg,
+        rgba(255,255,255,0.8) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0.6) 100%);
+}
+
+body.light-mode .stat-icon.blue {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: linear-gradient(145deg,
+        rgba(59, 130, 246, 0.15) 0%,
+        rgba(14, 165, 233, 0.08) 100%);
+}
+
+body.light-mode .stat-icon.green {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: linear-gradient(145deg,
+        rgba(16, 185, 129, 0.15) 0%,
+        rgba(20, 184, 166, 0.08) 100%);
+}
+
+body.light-mode .stat-icon.orange {
+    border-color: rgba(249, 115, 22, 0.3);
+    background: linear-gradient(145deg,
+        rgba(249, 115, 22, 0.15) 0%,
+        rgba(245, 158, 11, 0.08) 100%);
+}
+
+body.light-mode .stat-icon.purple {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: linear-gradient(145deg,
+        rgba(139, 92, 246, 0.15) 0%,
+        rgba(168, 85, 247, 0.08) 100%);
+}
+
+body.light-mode .stat-icon.cyan {
+    border-color: rgba(14, 165, 233, 0.3);
+    background: linear-gradient(145deg,
+        rgba(14, 165, 233, 0.15) 0%,
+        rgba(6, 182, 212, 0.08) 100%);
+}
+
+body.light-mode .stat-icon.red {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: linear-gradient(145deg,
+        rgba(239, 68, 68, 0.15) 0%,
+        rgba(248, 113, 113, 0.08) 100%);
+}
+
+body.light-mode .drop-item i {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(14, 165, 233, 0.05));
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .section-header i,
+body.light-mode .panel-title i,
+body.light-mode .card-title i {
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06),
+        inset 0 1px 5px rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .action-icons a,
+body.light-mode .table-actions a,
+body.light-mode .icons a.ic,
+body.light-mode .ic {
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+body.light-mode .page-title i {
+    box-shadow:
+        0 8px 30px rgba(99, 102, 241, 0.3),
+        0 0 40px rgba(59, 130, 246, 0.15);
+}
