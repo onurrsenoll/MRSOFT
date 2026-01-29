@@ -97,6 +97,7 @@ body {
     min-height: 100vh;
     transition: var(--transition);
     position: relative;
+    padding-bottom: 100px; /* Footer için alan */
 }
 
 /* ========================================
@@ -1284,7 +1285,7 @@ input[type="checkbox"] {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER - Her zaman sayfanın en altında sabit
    ======================================== */
 .footer {
     text-align: center;
@@ -1292,8 +1293,20 @@ input[type="checkbox"] {
     color: var(--text3);
     font-size: 11px;
     border-top: 1px solid var(--border);
-    margin-top: 40px;
+    margin-top: auto;
     background: var(--bg-card);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.footer-slogan {
+    font-weight: 600;
+    color: var(--mr-blue);
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 /* ========================================
