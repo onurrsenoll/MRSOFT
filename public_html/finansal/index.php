@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         body {
             min-height: 100vh;
             background:
-                url('admin/img/login-bg.png') no-repeat center center fixed,
+                url('img/login-bg.jpg') no-repeat center center fixed,
                 linear-gradient(135deg, #020c1b 0%, #0a1628 50%, #0d1f3c 100%);
             background-size: cover;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
