@@ -97,26 +97,27 @@ body {
     min-height: 100vh;
     transition: var(--transition);
     position: relative;
+    padding-bottom: 100px; /* Footer için alan */
 }
 
 /* ========================================
-   ARKA PLAN WATERMARK LOGO
+   ARKA PLAN WATERMARK LOGO - Boş alanda ortalanmış
    ======================================== */
 body::before {
     content: '';
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vw;
-    max-width: 600px;
-    max-height: 600px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 650px;
+    max-height: 650px;
     background-image: url('../assets/logos/logo-white.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    opacity: 0.03;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
     transition: opacity 0.3s ease;
@@ -391,23 +392,47 @@ body.light-mode .theme-toggle:hover {
 }
 
 /* ========================================
-   KARTLAR
+   KARTLAR - NEUMORPHIC DESIGN (ADK PRO STYLE)
    ======================================== */
 .card,
 .panel,
 .box {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: 24px;
     margin-bottom: 20px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.25),
+        -4px -4px 15px rgba(255, 255, 255, 0.03);
 }
 
 .card:hover,
 .panel:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--mr-blue);
+    transform: translateY(-3px);
+    box-shadow:
+        12px 12px 30px rgba(0, 0, 0, 0.35),
+        -6px -6px 20px rgba(255, 255, 255, 0.05),
+        0 0 20px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Light mode card shadows */
+body.light-mode .card,
+body.light-mode .panel,
+body.light-mode .box {
+    box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.08),
+        -4px -4px 15px rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .card:hover,
+body.light-mode .panel:hover {
+    box-shadow:
+        12px 12px 30px rgba(0, 0, 0, 0.12),
+        -6px -6px 20px rgba(255, 255, 255, 1),
+        0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 .card-header,
@@ -864,15 +889,28 @@ body.light-mode tr:hover td {
 }
 
 /* ========================================
-   FORM ELEMANLARI
+   FORM ELEMANLARI - NEUMORPHIC DESIGN
    ======================================== */
 .form-section {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
+    border-radius: 16px;
     padding: 28px;
     margin-bottom: 24px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.25),
+        -4px -4px 15px rgba(255, 255, 255, 0.03);
+}
+
+.form-section:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+body.light-mode .form-section {
+    box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.08),
+        -4px -4px 15px rgba(255, 255, 255, 0.9);
 }
 
 .section-header {
@@ -952,8 +990,24 @@ select {
     color: var(--text);
     font-size: 13px;
     font-family: inherit;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     outline: none;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .frm-in,
+body.light-mode .frm-sel,
+body.light-mode input[type="text"],
+body.light-mode input[type="email"],
+body.light-mode input[type="password"],
+body.light-mode input[type="number"],
+body.light-mode input[type="date"],
+body.light-mode input[type="tel"],
+body.light-mode input[type="url"],
+body.light-mode input[type="search"],
+body.light-mode textarea,
+body.light-mode select {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .frm-in:focus,
@@ -962,7 +1016,7 @@ input:focus,
 textarea:focus,
 select:focus {
     border-color: var(--mr-blue);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15), inset 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .frm-in::placeholder,
@@ -1284,7 +1338,7 @@ input[type="checkbox"] {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER - Her zaman sayfanın en altında sabit
    ======================================== */
 .footer {
     text-align: center;
@@ -1292,8 +1346,20 @@ input[type="checkbox"] {
     color: var(--text3);
     font-size: 11px;
     border-top: 1px solid var(--border);
-    margin-top: 40px;
+    margin-top: auto;
     background: var(--bg-card);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.footer-slogan {
+    font-weight: 600;
+    color: var(--mr-blue);
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 /* ========================================

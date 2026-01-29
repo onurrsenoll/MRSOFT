@@ -50,7 +50,7 @@ $isLightMode = ($currentTheme === 'light');
 }
 
 .nav-logo img {
-    height: 36px;
+    height: 47px;
     width: auto;
     transition: all 0.3s ease;
 }
@@ -159,12 +159,19 @@ body.light-mode .logo-blue { display: block; }
 }
 
 .drop-item i {
-    width: 20px;
-    text-align: center;
-    color: inherit;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(14, 165, 233, 0.2));
+    border-radius: 6px;
+    color: var(--mr-blue);
+    font-size: 12px;
 }
 
 .drop-item:hover i {
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
@@ -175,8 +182,17 @@ body.light-mode .drop-item {
     border-color: rgba(59, 130, 246, 0.15);
 }
 
+body.light-mode .drop-item i {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(14, 165, 233, 0.15));
+}
+
 body.light-mode .drop-item:hover {
     background: var(--gradient-btn);
+    color: #fff;
+}
+
+body.light-mode .drop-item:hover i {
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
