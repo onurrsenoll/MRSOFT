@@ -96,6 +96,36 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     transition: var(--transition);
+    position: relative;
+}
+
+/* ========================================
+   ARKA PLAN WATERMARK LOGO
+   ======================================== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vw;
+    max-width: 600px;
+    max-height: 600px;
+    background-image: url('../assets/logos/logo-white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Light mode - use blue logo for watermark */
+body.light-mode::before {
+    background-image: url('../assets/logos/logo-blue.svg');
+    opacity: 0.04;
 }
 
 /* Manrope - KPI/Rakam/Stat için */

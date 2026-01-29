@@ -41,6 +41,28 @@ $isLightMode = ($currentTheme === 'light');
         })();
     </script>
 <style>
+/* ========== LOGO ========== */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 36px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Dark mode - show white logo, hide blue */
+.logo-white { display: block; }
+.logo-blue { display: none; }
+
+/* Light mode - show blue logo, hide white */
+body.light-mode .logo-white { display: none; }
+body.light-mode .logo-blue { display: block; }
+
 /* ========== NAVIGATION ========== */
 .header{display:none!important}
 
@@ -254,6 +276,12 @@ body {
 </head>
 <body class="<?= $isLightMode ? 'light-mode' : '' ?>">
     <nav class="nav">
+        <!-- LOGO - Tema'ya göre değişir -->
+        <a href="dashboard.php" class="nav-logo" title="<?= APP_NAME ?>">
+            <img src="../assets/logos/logo-white.svg" alt="<?= APP_NAME ?>" class="logo-white">
+            <img src="../assets/logos/logo-blue.svg" alt="<?= APP_NAME ?>" class="logo-blue">
+        </a>
+
         <?php if (hasPermission('dashboard')): ?>
         <a href="dashboard.php" class="nav-item">
             <i class="fas fa-home"></i> ANASAYFA
