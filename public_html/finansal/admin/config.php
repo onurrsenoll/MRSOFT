@@ -118,11 +118,11 @@ function hasRole($role) {
 }
 
 /**
- * Giriş sayfasına yönlendir
+ * Giris sayfasina yonlendir
  */
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: login.php');
+        header('Location: ../index.php');
         exit;
     }
 }
