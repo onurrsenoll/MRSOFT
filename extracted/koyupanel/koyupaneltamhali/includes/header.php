@@ -278,8 +278,8 @@ body {
     <nav class="nav">
         <!-- LOGO - Tema'ya göre değişir -->
         <a href="dashboard.php" class="nav-logo" title="<?= APP_NAME ?>">
-            <img src="../assets/logos/logo-white.svg" alt="<?= APP_NAME ?>" class="logo-white">
-            <img src="../assets/logos/logo-blue.svg" alt="<?= APP_NAME ?>" class="logo-blue">
+            <img src="../assets/logos/logo-white.png" alt="<?= APP_NAME ?>" class="logo-white">
+            <img src="../assets/logos/logo-blue.png" alt="<?= APP_NAME ?>" class="logo-blue">
         </a>
 
         <?php if (hasPermission('dashboard')): ?>

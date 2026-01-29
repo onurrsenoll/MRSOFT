@@ -112,7 +112,7 @@ body::before {
     height: 50vw;
     max-width: 600px;
     max-height: 600px;
-    background-image: url('../assets/logos/logo-white.svg');
+    background-image: url('../assets/logos/logo-white.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -124,7 +124,7 @@ body::before {
 
 /* Light mode - use blue logo for watermark */
 body.light-mode::before {
-    background-image: url('../assets/logos/logo-blue.svg');
+    background-image: url('../assets/logos/logo-blue.png');
     opacity: 0.04;
 }
 
