@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 800" width="2400" height="800">
-  <title>MR Cam Kaplama Tasarımı V2 - Çizgili Logo</title>
+  <title>MR Cam Kaplama Tasarımı V2 - Çizgili MR Harfleri</title>
 
   <defs>
-    <!-- Çapraz çizgi deseni - daha ince -->
+    <!-- Çapraz çizgi deseni -->
     <pattern id="fineStripes" patternUnits="userSpaceOnUse" width="16" height="16" patternTransform="rotate(-50)">
       <rect width="8" height="16" fill="#1e3a6e"/>
       <rect x="8" width="8" height="16" fill="transparent"/>
-    </pattern>
-
-    <!-- Logo maskesi için çizgili desen -->
-    <pattern id="logoStripes" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(-50)">
-      <rect width="7" height="14" fill="#1e3a6e"/>
-      <rect x="7" width="7" height="14" fill="transparent"/>
     </pattern>
 
     <!-- Clip path for left section -->
@@ -26,55 +20,72 @@
     </clipPath>
   </defs>
 
-  <!-- Sol taraf - Solid M harfi çapraz çizgilerle -->
+  <!-- Sol taraf - M harfi çapraz çizgilerle -->
   <g clip-path="url(#leftClip)">
-    <!-- M harfi - çizgili -->
-    <path d="M 150 650 L 150 200 L 350 450 L 550 200 L 550 650 L 450 650 L 450 400 L 350 550 L 250 400 L 250 650 Z"
+    <path d="M 100 650 L 100 150 L 300 400 L 500 150 L 500 650 L 400 650 L 400 350 L 300 500 L 200 350 L 200 650 Z"
           fill="url(#fineStripes)"/>
   </g>
 
-  <!-- Merkez Logo - Büyük ve belirgin -->
-  <g transform="translate(1200, 400)">
-    <!-- Beyaz arka plan circle -->
-    <circle r="230" fill="white" opacity="0.95"/>
-    <circle r="235" fill="none" stroke="#1e3a6e" stroke-width="6"/>
+  <!-- Merkez Logo - Beyaz arka plan -->
+  <circle cx="1200" cy="400" r="230" fill="white" opacity="0.98"/>
+  <circle cx="1200" cy="400" r="235" fill="none" stroke="#1e3a6e" stroke-width="6"/>
 
-    <!-- MR Sütun Logo -->
-    <g transform="scale(0.5)" fill="#1e3a6e">
-      <!-- Üst başlık -->
-      <rect x="-180" y="-280" width="360" height="25" rx="3"/>
-      <rect x="-160" y="-250" width="320" height="20" rx="2"/>
+  <!-- MR Logo - İyonik Sütun (Merkez) -->
+  <g transform="translate(1200, 400)" fill="#1e3a6e">
 
-      <!-- Scroll sol -->
-      <circle cx="-150" cy="-210" r="25" fill="none" stroke="#1e3a6e" stroke-width="12"/>
-      <rect x="-150" y="-235" width="30" height="50"/>
+    <!-- Üst başlık (abakus) -->
+    <rect x="-85" y="-155" width="170" height="12" rx="2"/>
 
-      <!-- Scroll sağ -->
-      <circle cx="150" cy="-210" r="25" fill="none" stroke="#1e3a6e" stroke-width="12"/>
-      <rect x="120" y="-235" width="30" height="50"/>
+    <!-- Üst kısım altı -->
+    <rect x="-75" y="-143" width="150" height="8"/>
 
-      <!-- Üst bar -->
-      <rect x="-130" y="-220" width="260" height="30" rx="2"/>
-
-      <!-- Sütunlar -->
-      <rect x="-110" y="-185" width="35" height="320"/>
-      <rect x="-45" y="-185" width="35" height="280"/>
-      <rect x="15" y="-185" width="35" height="280"/>
-      <rect x="75" y="-185" width="35" height="320"/>
-
-      <!-- Sivri uçlar -->
-      <polygon points="-110,135 -75,135 -92,200"/>
-      <polygon points="-45,95 -10,95 -27,160"/>
-      <polygon points="15,95 50,95 32,160"/>
-      <polygon points="75,135 110,135 92,200"/>
+    <!-- Sol volüt (kıvrım) -->
+    <g transform="translate(-65, -120)">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#1e3a6e" stroke-width="8"/>
+      <circle cx="0" cy="0" r="6" fill="#1e3a6e"/>
+      <rect x="-4" y="-25" width="20" height="25" fill="#1e3a6e"/>
     </g>
+
+    <!-- Sağ volüt (kıvrım) -->
+    <g transform="translate(65, -120)">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#1e3a6e" stroke-width="8"/>
+      <circle cx="0" cy="0" r="6" fill="#1e3a6e"/>
+      <rect x="-16" y="-25" width="20" height="25" fill="#1e3a6e"/>
+    </g>
+
+    <!-- Volütler arası bağlantı -->
+    <rect x="-50" y="-130" width="100" height="15" rx="3"/>
+
+    <!-- Echinus -->
+    <ellipse cx="0" cy="-100" rx="55" ry="8"/>
+
+    <!-- Sütun gövdesi -->
+    <rect x="-50" y="-92" width="100" height="200" fill="#1e3a6e"/>
+
+    <!-- Yiv çizgileri -->
+    <rect x="-40" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="-25" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="-10" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="6" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="21" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="36" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+
+    <!-- Alt kaide -->
+    <rect x="-55" y="108" width="110" height="10"/>
+    <rect x="-60" y="118" width="120" height="8"/>
+
+    <!-- Alt sivri uçlar -->
+    <polygon points="-50,126 -35,126 -42,160"/>
+    <polygon points="-20,126 -5,126 -12,155"/>
+    <polygon points="5,126 20,126 12,155"/>
+    <polygon points="35,126 50,126 42,160"/>
+
   </g>
 
-  <!-- Sağ taraf - Solid R harfi çapraz çizgilerle -->
+  <!-- Sağ taraf - R harfi çapraz çizgilerle -->
   <g clip-path="url(#rightClip)">
-    <!-- R harfi - çizgili -->
-    <path d="M 1600 650 L 1600 200 L 1850 200 Q 1950 200 1950 300 Q 1950 400 1850 400 L 1700 400 L 1950 650 L 1830 650 L 1620 430 L 1700 430 L 1700 350 L 1800 350 Q 1830 350 1830 300 Q 1830 270 1800 270 L 1700 270 L 1700 650 Z"
-          fill="url(#fineStripes)"/>
+    <path d="M 1600 650 L 1600 150 L 1900 150 Q 2050 150 2050 300 Q 2050 420 1900 450 L 2100 650 L 1950 650 L 1780 470 L 1750 470 L 1750 650 Z M 1750 380 L 1880 380 Q 1930 380 1930 300 Q 1930 220 1880 220 L 1750 220 Z"
+          fill="url(#fineStripes)" fill-rule="evenodd"/>
   </g>
 
   <!-- Dekoratif çizgiler -->

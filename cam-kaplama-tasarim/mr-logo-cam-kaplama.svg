@@ -8,64 +8,71 @@
       <rect width="10" height="20" fill="#1e3a6e"/>
       <rect x="10" width="10" height="20" fill="transparent"/>
     </pattern>
-
-    <!-- Logo için maske -->
-    <mask id="logoMask">
-      <rect width="100%" height="100%" fill="white"/>
-      <circle cx="1200" cy="400" r="220" fill="black"/>
-    </mask>
-
-    <!-- Gradient efekti -->
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#1e3a6e;stop-opacity:0.3"/>
-      <stop offset="30%" style="stop-color:#1e3a6e;stop-opacity:0.9"/>
-      <stop offset="50%" style="stop-color:#1e3a6e;stop-opacity:1"/>
-      <stop offset="70%" style="stop-color:#1e3a6e;stop-opacity:0.9"/>
-      <stop offset="100%" style="stop-color:#1e3a6e;stop-opacity:0.3"/>
-    </linearGradient>
   </defs>
 
   <!-- Arka plan (şeffaf cam için) -->
   <rect width="100%" height="100%" fill="none"/>
 
   <!-- Sol taraf çapraz çizgiler -->
-  <rect x="0" y="100" width="980" height="600" fill="url(#diagonalStripes)" opacity="0.95"/>
+  <rect x="0" y="100" width="950" height="600" fill="url(#diagonalStripes)" opacity="0.95"/>
 
   <!-- Sağ taraf çapraz çizgiler -->
-  <rect x="1420" y="100" width="980" height="600" fill="url(#diagonalStripes)" opacity="0.95"/>
+  <rect x="1450" y="100" width="950" height="600" fill="url(#diagonalStripes)" opacity="0.95"/>
 
   <!-- Merkez logo alanı - beyaz daire arka plan -->
-  <circle cx="1200" cy="400" r="200" fill="white" opacity="0.95"/>
-  <circle cx="1200" cy="400" r="205" fill="none" stroke="#1e3a6e" stroke-width="4"/>
+  <circle cx="1200" cy="400" r="220" fill="white" opacity="0.98"/>
+  <circle cx="1200" cy="400" r="225" fill="none" stroke="#1e3a6e" stroke-width="5"/>
 
-  <!-- MR Logo - Sütun tasarımı -->
-  <g transform="translate(1200, 400) scale(0.45)" fill="#1e3a6e">
-    <!-- Üst kısım - başlık -->
-    <rect x="-180" y="-280" width="360" height="25" rx="3"/>
-    <rect x="-160" y="-250" width="320" height="20" rx="2"/>
+  <!-- MR Logo - İyonik Sütun -->
+  <g transform="translate(1200, 400)" fill="#1e3a6e">
 
-    <!-- Scroll (kıvrım) sol -->
-    <circle cx="-150" cy="-210" r="25" fill="none" stroke="#1e3a6e" stroke-width="12"/>
-    <rect x="-150" y="-235" width="30" height="50" fill="#1e3a6e"/>
+    <!-- Üst başlık (abakus) -->
+    <rect x="-85" y="-155" width="170" height="12" rx="2"/>
 
-    <!-- Scroll (kıvrım) sağ -->
-    <circle cx="150" cy="-210" r="25" fill="none" stroke="#1e3a6e" stroke-width="12"/>
-    <rect x="120" y="-235" width="30" height="50" fill="#1e3a6e"/>
+    <!-- Üst kısım altı -->
+    <rect x="-75" y="-143" width="150" height="8"/>
 
-    <!-- Ana gövde - üst bar -->
-    <rect x="-130" y="-220" width="260" height="30" rx="2"/>
+    <!-- Sol volüt (kıvrım) -->
+    <g transform="translate(-65, -120)">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#1e3a6e" stroke-width="8"/>
+      <circle cx="0" cy="0" r="6" fill="#1e3a6e"/>
+      <rect x="-4" y="-25" width="20" height="25" fill="#1e3a6e"/>
+    </g>
 
-    <!-- Sütunlar -->
-    <rect x="-110" y="-185" width="35" height="320" fill="#1e3a6e"/>
-    <rect x="-45" y="-185" width="35" height="280" fill="#1e3a6e"/>
-    <rect x="15" y="-185" width="35" height="280" fill="#1e3a6e"/>
-    <rect x="75" y="-185" width="35" height="320" fill="#1e3a6e"/>
+    <!-- Sağ volüt (kıvrım) -->
+    <g transform="translate(65, -120)">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#1e3a6e" stroke-width="8"/>
+      <circle cx="0" cy="0" r="6" fill="#1e3a6e"/>
+      <rect x="-16" y="-25" width="20" height="25" fill="#1e3a6e"/>
+    </g>
+
+    <!-- Volütler arası bağlantı -->
+    <rect x="-50" y="-130" width="100" height="15" rx="3"/>
+
+    <!-- Echinus (volüt altı yastık) -->
+    <ellipse cx="0" cy="-100" rx="55" ry="8"/>
+
+    <!-- Sütun gövdesi - dikey yivler -->
+    <rect x="-50" y="-92" width="100" height="200" fill="#1e3a6e"/>
+
+    <!-- Yiv çizgileri (fluting) - beyaz çizgiler -->
+    <rect x="-40" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="-25" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="-10" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="6" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="21" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+    <rect x="36" y="-92" width="4" height="200" fill="white" opacity="0.3"/>
+
+    <!-- Alt kaide -->
+    <rect x="-55" y="108" width="110" height="10"/>
+    <rect x="-60" y="118" width="120" height="8"/>
 
     <!-- Alt sivri uçlar -->
-    <polygon points="-110,135 -75,135 -92,200"/>
-    <polygon points="-45,95 -10,95 -27,160"/>
-    <polygon points="15,95 50,95 32,160"/>
-    <polygon points="75,135 110,135 92,200"/>
+    <polygon points="-50,126 -35,126 -42,160"/>
+    <polygon points="-20,126 -5,126 -12,155"/>
+    <polygon points="5,126 20,126 12,155"/>
+    <polygon points="35,126 50,126 42,160"/>
+
   </g>
 
   <!-- Üst ve alt çizgi vurgusu -->
