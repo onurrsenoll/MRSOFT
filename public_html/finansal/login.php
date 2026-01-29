@@ -1,44 +1,11 @@
 <?php
 /**
  * MR HASAR DANIŞMANLIK - Giriş Sayfası
- * Bağımsız login dosyası
  */
 
-// Oturum başlat
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once 'config.php';
 
-// Zaman dilimi
-date_default_timezone_set('Europe/Istanbul');
-
-// Veritabanı ayarları
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'mrhasard_mrhasar_db');
-define('DB_USER', 'mrhasard_mrhasar_db');
-define('DB_PASS', 'Bx&jsqf.55');
-define('DB_CHARSET', 'utf8mb4');
-define('APP_NAME', 'MR HASAR DANIŞMANLIK VE FİLO YÖNETİMİ');
-
-// Yardımcı fonksiyonlar
-function e($string) {
-    return htmlspecialchars($string ?? '', ENT_QUOTES, 'UTF-8');
-}
-
-function isLoggedIn() {
-    return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
-}
-
-// Veritabanı bağlantısı
-try {
-    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-} catch (PDOException $ex) {
-    die("Veritabanı bağlantı hatası");
-}
+startSecureSession();
 
 // Zaten giriş yapmışsa yönlendir
 if (isLoggedIn()) {
@@ -57,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($password)) {
         $error = 'Kullanıcı adı ve şifre gereklidir.';
     } else {
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND is_active = 1");
+        $db = getDB();
+        $stmt = $db->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND is_active = 1");
         $stmt->execute([$username, $username]);
         $user = $stmt->fetch();
 
@@ -68,8 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_role'] = $user['role'];
 
-            $stmt = $pdo->prepare("UPDATE users SET last_login = NOW() WHERE id = ?");
+            $stmt = $db->prepare("UPDATE users SET last_login = NOW() WHERE id = ?");
             $stmt->execute([$user['id']]);
+
+            auditLog('users', $user['id'], 'LOGIN');
 
             header('Location: modules/dashboard.php');
             exit;

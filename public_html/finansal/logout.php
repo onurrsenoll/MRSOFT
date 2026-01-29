@@ -1,12 +1,15 @@
 <?php
 /**
  * MR HASAR DANIŞMANLIK - Çıkış
- * Bağımsız logout dosyası
  */
 
-// Oturumu başlat
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+require_once 'config.php';
+
+startSecureSession();
+
+// Denetim kaydı
+if (isLoggedIn()) {
+    auditLog('users', $_SESSION['user_id'], 'LOGOUT');
 }
 
 // Oturumu temizle
