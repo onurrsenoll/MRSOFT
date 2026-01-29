@@ -27,12 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $full_name = trim(mb_strtoupper($_POST['full_name'] ?? '', 'UTF-8'));
     $role = $_POST['role'] ?? '';
     $password = $_POST['password'] ?? '';
-    
+    $email = trim($_POST['email'] ?? '');
+
+    // Email boşsa benzersiz placeholder oluştur
+    if (empty($email)) {
+        $email = strtolower($username) . '@mrhasar.local';
+    }
+
     if ($username && $full_name && $role && $password) {
         try {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $db->prepare("INSERT INTO users (username, password_hash, role, full_name) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$username, $hash, $role, $full_name]);
+            $stmt = $db->prepare("INSERT INTO users (username, password_hash, role, full_name, email) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$username, $hash, $role, $full_name, $email]);
             header("Location: tanim_personel.php?success=1");
             exit;
         } catch (Exception $e) {
@@ -71,6 +77,10 @@ include __DIR__ . '/../includes/header.php';
             <div class="frm-grp">
                 <label class="frm-lbl">AD SOYAD</label>
                 <input type="text" name="full_name" class="frm-in" required>
+            </div>
+            <div class="frm-grp">
+                <label class="frm-lbl">E-POSTA <small style="color:var(--text3)">(Opsiyonel)</small></label>
+                <input type="email" name="email" class="frm-in" placeholder="ornek@email.com">
             </div>
             <div class="frm-grp">
                 <label class="frm-lbl">ROL</label>
