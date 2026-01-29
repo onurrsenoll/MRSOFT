@@ -240,9 +240,9 @@ include __DIR__ . '/../includes/header.php';
                 </tr>
                 <?php else: ?>
                 <?php foreach ($dosyalar as $dosya): ?>
-                <tr <?= $showDeleted ? 'style="opacity:0.7"' : '' ?>>
-                    <td style="color:var(--blue);font-weight:700"><?= htmlspecialchars($dosya['dosya_no']) ?></td>
-                    <td><?= htmlspecialchars($dosya['ad_soyad']) ?></td>
+                <tr class="clickable-row" onclick="window.location='dosya_detay.php?id=<?= $dosya['id'] ?>'" <?= $showDeleted ? 'style="opacity:0.7"' : '' ?>>
+                    <td><a href="dosya_detay.php?id=<?= $dosya['id'] ?>" class="dosya-no" onclick="event.stopPropagation()"><?= htmlspecialchars($dosya['dosya_no']) ?></a></td>
+                    <td><a href="dosya_detay.php?id=<?= $dosya['id'] ?>" class="name-link" onclick="event.stopPropagation()"><?= htmlspecialchars($dosya['ad_soyad']) ?></a></td>
                     <td>
                         <span class="badge <?= strtolower($dosya['case_type'] ?? 'adk') ?>">
                             <?= htmlspecialchars($dosya['case_type'] ?? '-') ?>

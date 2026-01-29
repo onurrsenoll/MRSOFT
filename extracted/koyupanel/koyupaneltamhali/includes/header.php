@@ -111,30 +111,51 @@ $isLightMode = ($currentTheme === 'light');
     transform: translateY(0);
 }
 
-/* Dropdown Items */
+/* Dropdown Items - Mavi Taban Beyaz Yazı */
 .drop-item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 18px;
+    padding: 10px 14px;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.2s ease;
     margin: 4px 10px;
     border-radius: 8px;
-    color: var(--text2);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 165, 233, 0.1));
+    color: var(--mr-blue);
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .drop-item:hover {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--text);
+    background: var(--gradient-btn);
+    color: #fff;
+    border-color: transparent;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 .drop-item i {
-    width: 18px;
+    width: 20px;
     text-align: center;
+    color: inherit;
+}
+
+.drop-item:hover i {
+    color: #fff;
+}
+
+/* Light mode dropdown */
+body.light-mode .drop-item {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(14, 165, 233, 0.08));
     color: var(--mr-blue);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+body.light-mode .drop-item:hover {
+    background: var(--gradient-btn);
+    color: #fff;
 }
 
 /* Dropdown Divider */

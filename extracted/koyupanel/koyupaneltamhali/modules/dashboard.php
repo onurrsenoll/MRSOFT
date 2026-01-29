@@ -180,10 +180,10 @@ include __DIR__ . '/../includes/header.php';
                 </tr>
                 <?php else: ?>
                 <?php foreach ($sonDosyalar as $dosya): ?>
-                <tr>
-                    <td style="color:var(--blue);font-weight:700"><?= e($dosya['dosya_no']) ?></td>
+                <tr class="clickable-row" onclick="window.location='dosya_detay.php?id=<?= $dosya['id'] ?>'">
+                    <td><a href="dosya_detay.php?id=<?= $dosya['id'] ?>" class="dosya-no" onclick="event.stopPropagation()"><?= e($dosya['dosya_no']) ?></a></td>
                     <td><?= substr($dosya['tc_kimlik'], 0, 3) ?>***<?= substr($dosya['tc_kimlik'], -3) ?></td>
-                    <td><?= e($dosya['ad_soyad']) ?></td>
+                    <td><a href="dosya_detay.php?id=<?= $dosya['id'] ?>" class="name-link" onclick="event.stopPropagation()"><?= e($dosya['ad_soyad']) ?></a></td>
                     <td>
                         <span class="badge <?= strtolower($dosya['case_type']) ?>">
                             <?= e($dosya['case_type']) ?>
