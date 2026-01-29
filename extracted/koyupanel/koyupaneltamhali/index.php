@@ -139,8 +139,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-body);
             background-image: url('assets/images/login-bg.jpg');
-            background-size: cover;
-            background-position: center;
+            background-size: contain;
+            background-position: left center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             min-height: 100vh;
@@ -232,21 +232,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             box-shadow: none;
         }
 
-        /* Login Icon */
-        .login-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
+        /* Login Logo */
+        .login-logo {
+            width: 100px;
+            height: 100px;
             margin: 0 auto 25px;
-            background: var(--gradient-btn);
-            color: #fff;
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-            font-family: 'Manrope', sans-serif;
-            font-weight: 800;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 30px rgba(99, 102, 241, 0.4));
         }
 
         /* Login Title */
@@ -431,10 +424,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 padding: 35px 25px;
             }
 
-            .login-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 28px;
+            .login-logo {
+                width: 80px;
+                height: 80px;
             }
 
             .login-title {
@@ -457,7 +449,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="login-box">
-            <div class="login-icon">MR</div>
+            <img src="assets/logos/logo-white.png" alt="MR Logo" class="login-logo">
             <div class="login-title"><?= APP_NAME ?></div>
             <div class="login-slogan"><?= APP_SLOGAN ?></div>
 
