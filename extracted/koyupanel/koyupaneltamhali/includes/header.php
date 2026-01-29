@@ -2,7 +2,7 @@
 /**
  * MR HASAR DANIŞMANLIK VE FİLO YÖNETİMİ - HEADER
  * HERZAMAN FARKEDER
- * v4.0 - Neumorphism Theme Support (Light/Dark)
+ * v5.0 - Final Theme System (Light/Dark)
  */
 
 if (!defined('APP_NAME')) {
@@ -16,28 +16,31 @@ if (!isLoggedIn()) {
     exit;
 }
 
-// Tema tercihini cookie'den al
-$currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
+// Tema tercihini cookie'den al (varsayılan: dark)
+$currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'dark';
+$isLightMode = ($currentTheme === 'light');
 ?>
 <!DOCTYPE html>
-<html lang="tr" data-theme="<?= htmlspecialchars($currentTheme) ?>">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME ?></title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <script>
         // Sayfa yüklenmeden önce tema ayarla (flash önleme)
         (function() {
             var theme = document.cookie.match(/mr_theme=([^;]+)/);
-            theme = theme ? theme[1] : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
+            theme = theme ? theme[1] : 'dark';
+            if (theme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
         })();
     </script>
 <style>
-/* ========== NAVIGATION - NEUMORPHISM ========== */
+/* ========== NAVIGATION ========== */
 .header{display:none!important}
 
 /* Navigation Bar */
@@ -52,23 +55,8 @@ $currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
     align-items: center;
     gap: 5px;
     overflow: visible !important;
-    transition: all 0.3s ease;
-}
-
-/* Dark Theme Nav */
-[data-theme="dark"] .nav {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    border-bottom: 1px solid rgba(59, 130, 246, 0.3) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Light Theme Nav - Neumorphism */
-[data-theme="light"] .nav {
-    background: linear-gradient(135deg, #e8eef5 0%, #dce4ed 100%) !important;
-    border-bottom: none !important;
-    box-shadow:
-        0 4px 15px rgba(163, 177, 198, 0.4),
-        0 -2px 10px rgba(255, 255, 255, 0.8);
+    height: auto !important;
+    min-height: 56px;
 }
 
 /* Nav Items */
@@ -82,29 +70,19 @@ $currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
     font-size: 12px;
     font-weight: 600;
     gap: 6px;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: all 0.3s ease;
+    color: var(--text2);
 }
 
-/* Dark Theme Nav Items */
-[data-theme="dark"] .nav-item {
-    color: #cbd5e1;
-}
-[data-theme="dark"] .nav-item:hover {
-    color: #3b82f6;
+.nav-item:hover {
+    color: var(--mr-blue);
     background: rgba(59, 130, 246, 0.1);
 }
 
-/* Light Theme Nav Items - Neumorphism */
-[data-theme="light"] .nav-item {
-    color: #1e3a5f;
-}
-[data-theme="light"] .nav-item:hover {
-    color: #2563eb;
-    background: #e4ebf5;
-    box-shadow:
-        4px 4px 8px rgba(163, 177, 198, 0.4),
-        -4px -4px 8px rgba(255, 255, 255, 0.9);
+.nav-item.active {
+    background: var(--gradient-btn);
+    color: #fff;
 }
 
 /* Dropdown Menu */
@@ -113,30 +91,17 @@ $currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
     top: 100%;
     left: 0;
     min-width: 260px;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     z-index: 99999 !important;
-    padding: 12px 0;
+    padding: 10px 0;
     margin-top: 8px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.25s ease;
-}
-
-/* Dark Theme Dropdown */
-[data-theme="dark"] .dropdown {
-    background: linear-gradient(145deg, #1e293b, #0f172a);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-}
-
-/* Light Theme Dropdown - Neumorphism */
-[data-theme="light"] .dropdown {
-    background: #e4ebf5;
-    border: none;
-    box-shadow:
-        10px 10px 30px rgba(163, 177, 198, 0.5),
-        -10px -10px 30px rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-lg);
 }
 
 .nav-item:hover > .dropdown {
@@ -150,167 +115,111 @@ $currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px 20px;
+    padding: 12px 18px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     transition: all 0.2s ease;
     margin: 4px 10px;
-    border-radius: 10px;
+    border-radius: 8px;
+    color: var(--text2);
 }
 
-/* Dark Theme Drop Items */
-[data-theme="dark"] .drop-item {
-    color: #cbd5e1;
-}
-[data-theme="dark"] .drop-item:hover {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: #fff;
+.drop-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--text);
 }
 
-/* Light Theme Drop Items - Neumorphism */
-[data-theme="light"] .drop-item {
-    color: #1e3a5f;
-}
-[data-theme="light"] .drop-item:hover {
-    background: #e4ebf5;
-    color: #2563eb;
-    box-shadow:
-        inset 3px 3px 6px rgba(163, 177, 198, 0.4),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+.drop-item i {
+    width: 18px;
+    text-align: center;
+    color: var(--mr-blue);
 }
 
 /* Dropdown Divider */
 .drop-div {
     height: 1px;
-    margin: 10px 20px;
-}
-[data-theme="dark"] .drop-div {
-    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
-}
-[data-theme="light"] .drop-div {
-    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), transparent);
+    margin: 10px 18px;
+    background: var(--border);
 }
 
 /* Dropdown Label */
 .drop-label {
-    padding: 8px 20px;
+    padding: 8px 18px;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-[data-theme="dark"] .drop-label {
-    color: #64748b;
-}
-[data-theme="light"] .drop-label {
-    color: #64748b;
+    color: var(--text3);
 }
 
 /* ADK PRO Special Button */
 .drop-item.adk-pro {
-    background: linear-gradient(135deg, #1e3a5f, #2563eb) !important;
+    background: var(--gradient-btn) !important;
     color: #fff !important;
     font-weight: 600;
     margin: 8px 10px;
 }
 .drop-item.adk-pro:hover {
-    background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
     transform: scale(1.02);
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4) !important;
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4) !important;
+}
+.drop-item.adk-pro i {
+    color: #fff;
 }
 
 /* ========== THEME TOGGLE ========== */
 .theme-toggle {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
     margin-left: auto;
     margin-right: 15px;
-    padding: 4px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-[data-theme="dark"] .theme-toggle {
-    background: rgba(30, 41, 59, 0.8);
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="light"] .theme-toggle {
-    background: #dce4ed;
-    box-shadow:
-        inset 3px 3px 6px rgba(163, 177, 198, 0.5),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.9);
 }
 
 .theme-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.3s ease;
-    background: transparent;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--mr-blue);
 }
 
-/* Dark Theme Buttons */
-[data-theme="dark"] .theme-btn {
-    color: #64748b;
-}
-[data-theme="dark"] .theme-btn:hover {
-    color: #f1f5f9;
-}
-[data-theme="dark"] .theme-btn.active {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+.theme-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: scale(1.05);
 }
 
-/* Light Theme Buttons - Neumorphism */
-[data-theme="light"] .theme-btn {
-    color: #64748b;
+body.light-mode .theme-btn {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #f59e0b;
 }
-[data-theme="light"] .theme-btn:hover {
-    color: #1e3a5f;
-}
-[data-theme="light"] .theme-btn.active {
-    background: linear-gradient(135deg, #2563eb, #0ea5e9);
-    color: #fff;
-    box-shadow:
-        4px 4px 10px rgba(163, 177, 198, 0.5),
-        -4px -4px 10px rgba(255, 255, 255, 0.8);
+
+body.light-mode .theme-btn:hover {
+    background: rgba(245, 158, 11, 0.25);
 }
 
 /* Logout Button */
 .nav-item.logout-btn {
     margin-left: 0;
+    color: #ef4444 !important;
 }
-[data-theme="dark"] .nav-item.logout-btn {
-    color: #ef4444;
-}
-[data-theme="dark"] .nav-item.logout-btn:hover {
+.nav-item.logout-btn:hover {
     background: rgba(239, 68, 68, 0.1);
-    color: #f87171;
-}
-[data-theme="light"] .nav-item.logout-btn {
-    color: #dc2626;
-}
-[data-theme="light"] .nav-item.logout-btn:hover {
-    color: #b91c1c;
-    background: #e4ebf5;
-    box-shadow:
-        4px 4px 8px rgba(163, 177, 198, 0.4),
-        -4px -4px 8px rgba(255, 255, 255, 0.9);
+    color: #f87171 !important;
 }
 
 /* Body Padding */
 body {
-    padding-top: 60px !important;
+    padding-top: 65px !important;
 }
 
 /* Content Area */
@@ -321,7 +230,7 @@ body {
 }
 </style>
 </head>
-<body data-theme="<?= htmlspecialchars($currentTheme) ?>">
+<body class="<?= $isLightMode ? 'light-mode' : '' ?>">
     <nav class="nav">
         <?php if (hasPermission('dashboard')): ?>
         <a href="dashboard.php" class="nav-item">
@@ -546,11 +455,8 @@ body {
 
         <!-- THEME TOGGLE -->
         <div class="theme-toggle">
-            <button type="button" class="theme-btn" id="lightThemeBtn" onclick="setTheme('light')" title="Açık Tema">
-                <i class="fas fa-sun"></i>
-            </button>
-            <button type="button" class="theme-btn" id="darkThemeBtn" onclick="setTheme('dark')" title="Koyu Tema">
-                <i class="fas fa-moon"></i>
+            <button type="button" class="theme-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Tema Değiştir">
+                <i class="fas fa-moon" id="themeIcon"></i>
             </button>
         </div>
 
@@ -563,30 +469,31 @@ body {
 
 <script>
 // Tema değiştirme fonksiyonu
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.body.setAttribute('data-theme', theme);
-    document.cookie = 'mr_theme=' + theme + ';path=/;max-age=31536000;SameSite=Lax';
-    updateThemeButtons(theme);
-}
+function toggleTheme() {
+    var body = document.body;
+    var icon = document.getElementById('themeIcon');
 
-// Tema butonlarını güncelle
-function updateThemeButtons(theme) {
-    var lightBtn = document.getElementById('lightThemeBtn');
-    var darkBtn = document.getElementById('darkThemeBtn');
-
-    if (theme === 'light') {
-        lightBtn.classList.add('active');
-        darkBtn.classList.remove('active');
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        document.documentElement.classList.remove('light-mode');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        document.cookie = 'mr_theme=dark;path=/;max-age=31536000;SameSite=Lax';
     } else {
-        darkBtn.classList.add('active');
-        lightBtn.classList.remove('active');
+        body.classList.add('light-mode');
+        document.documentElement.classList.add('light-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        document.cookie = 'mr_theme=light;path=/;max-age=31536000;SameSite=Lax';
     }
 }
 
-// Sayfa yüklendiğinde mevcut temayı uygula
+// Sayfa yüklendiğinde tema ikonunu güncelle
 document.addEventListener('DOMContentLoaded', function() {
-    var theme = document.documentElement.getAttribute('data-theme') || 'light';
-    updateThemeButtons(theme);
+    var icon = document.getElementById('themeIcon');
+    if (document.body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
 });
 </script>

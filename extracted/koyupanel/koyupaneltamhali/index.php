@@ -2,7 +2,7 @@
 /**
  * MR HASAR DANIŞMANLIK - GİRİŞ SAYFASI
  * MÜKEMMELLİK BİZİ HER ZAMAN AYIRT EDER
- * v4.0 - Neumorphism Theme Support
+ * v5.0 - Final Theme System (Light/Dark)
  */
 
 require_once __DIR__ . '/config.php';
@@ -29,8 +29,9 @@ if (isLoggedIn()) {
     exit;
 }
 
-// Tema tercihini cookie'den al
-$currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'light';
+// Tema tercihini cookie'den al (varsayılan: dark)
+$currentTheme = isset($_COOKIE['mr_theme']) ? $_COOKIE['mr_theme'] : 'dark';
+$isLightMode = ($currentTheme === 'light');
 
 $error = '';
 
@@ -74,68 +75,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="tr" data-theme="<?= htmlspecialchars($currentTheme) ?>">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME ?> - GİRİŞ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
         (function() {
             var theme = document.cookie.match(/mr_theme=([^;]+)/);
-            theme = theme ? theme[1] : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
+            theme = theme ? theme[1] : 'dark';
+            if (theme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
         })();
     </script>
     <style>
         :root {
+            /* Koyu Mod Renkleri (Varsayılan) */
+            --bg-body: #0a1628;
+            --bg-card: #111d35;
+            --bg-input: #0d1a2d;
+            --border: #1e3a5f;
+            --text: #ffffff;
+            --text2: #94a3b8;
+            --text3: #64748b;
+
+            /* Marka Renkleri */
             --mr-navy: #1e3a5f;
-            --mr-blue: #2563eb;
+            --mr-blue: #3b82f6;
             --mr-cyan: #0ea5e9;
-            --mr-gradient: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #0ea5e9 100%);
-            --mr-gradient-btn: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Gradient */
+            --gradient-btn: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #0ea5e9 100%);
+            --gradient-btn-hover: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #0284c7 100%);
+
+            /* Geçiş */
+            --transition: all 0.3s ease;
         }
 
-        /* Dark Theme */
-        [data-theme="dark"] {
-            --bg-primary: #0f172a;
-            --bg-card: #1e293b;
-            --bg-input: #0f172a;
-            --text: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --border: rgba(59, 130, 246, 0.2);
-            --neu-light: rgba(255, 255, 255, 0.03);
-            --neu-dark: rgba(0, 0, 0, 0.5);
-            --glow: rgba(59, 130, 246, 0.3);
-        }
-
-        /* Light Theme (Neumorphism) */
-        [data-theme="light"] {
-            --bg-primary: #e4ebf5;
-            --bg-card: #e4ebf5;
-            --bg-input: #dce4ed;
-            --text: #1e3a5f;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: transparent;
-            --neu-light: #ffffff;
-            --neu-dark: rgba(163, 177, 198, 0.6);
-            --glow: rgba(37, 99, 235, 0.2);
+        /* Açık Mod */
+        .light-mode {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-input: #e2e8f0;
+            --border: #cbd5e1;
+            --text: #1e293b;
+            --text2: #64748b;
+            --text3: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            text-transform: uppercase;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
+            background: var(--bg-body);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -153,127 +152,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .theme-toggle-login {
             display: flex;
             justify-content: center;
-            gap: 8px;
             margin-bottom: 30px;
-            padding: 6px;
-            border-radius: 30px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        [data-theme="dark"] .theme-toggle-login {
-            background: var(--bg-card);
-            box-shadow:
-                inset 3px 3px 6px rgba(0, 0, 0, 0.4),
-                inset -2px -2px 5px rgba(255, 255, 255, 0.02);
-        }
-
-        [data-theme="light"] .theme-toggle-login {
-            background: #dce4ed;
-            box-shadow:
-                inset 4px 4px 8px rgba(163, 177, 198, 0.5),
-                inset -4px -4px 8px rgba(255, 255, 255, 0.9);
         }
 
         .theme-btn-login {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             transition: var(--transition);
-            background: transparent;
-            color: var(--text-muted);
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--mr-blue);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .theme-btn-login:hover {
-            color: var(--text);
+            background: rgba(59, 130, 246, 0.2);
+            transform: scale(1.05);
         }
 
-        .theme-btn-login.active {
-            background: var(--mr-gradient-btn);
-            color: #fff;
+        .light-mode .theme-btn-login {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
         }
 
-        [data-theme="dark"] .theme-btn-login.active {
-            box-shadow:
-                3px 3px 6px rgba(0, 0, 0, 0.3),
-                0 0 20px var(--glow);
-        }
-
-        [data-theme="light"] .theme-btn-login.active {
-            box-shadow:
-                4px 4px 8px rgba(163, 177, 198, 0.5),
-                -4px -4px 8px rgba(255, 255, 255, 0.8),
-                0 0 20px var(--glow);
+        .light-mode .theme-btn-login:hover {
+            background: rgba(245, 158, 11, 0.25);
         }
 
         /* Login Box */
         .login-box {
             background: var(--bg-card);
-            border-radius: 24px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
             padding: 45px 40px;
             transition: var(--transition);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
         }
 
-        [data-theme="dark"] .login-box {
-            border: 1px solid var(--border);
-            box-shadow:
-                12px 12px 30px rgba(0, 0, 0, 0.5),
-                -6px -6px 20px rgba(255, 255, 255, 0.02);
-        }
-
-        [data-theme="light"] .login-box {
-            box-shadow:
-                12px 12px 30px rgba(163, 177, 198, 0.5),
-                -12px -12px 30px rgba(255, 255, 255, 0.9);
+        .light-mode .login-box {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         }
 
         /* Login Icon */
         .login-icon {
             width: 90px;
             height: 90px;
-            border-radius: 24px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 36px;
             margin: 0 auto 25px;
-            background: var(--mr-gradient-btn);
+            background: var(--gradient-btn);
             color: #fff;
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .login-icon {
-            box-shadow:
-                6px 6px 15px rgba(0, 0, 0, 0.4),
-                -3px -3px 10px rgba(255, 255, 255, 0.02),
-                0 0 30px var(--glow);
-        }
-
-        [data-theme="light"] .login-icon {
-            box-shadow:
-                8px 8px 20px rgba(163, 177, 198, 0.5),
-                -8px -8px 20px rgba(255, 255, 255, 0.8),
-                0 0 30px var(--glow);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
         }
 
         /* Login Title */
         .login-title {
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
-            background: var(--mr-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text);
             margin-bottom: 8px;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .login-slogan {
@@ -283,35 +234,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-bottom: 35px;
             letter-spacing: 3px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         /* Alert */
         .alert {
             padding: 16px 18px;
-            border-radius: 14px;
+            border-radius: 12px;
             margin-bottom: 25px;
             font-size: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
             font-weight: 500;
-        }
-
-        [data-theme="dark"] .alert {
             background: rgba(239, 68, 68, 0.1);
             border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #f87171;
-            box-shadow:
-                4px 4px 10px rgba(0, 0, 0, 0.3),
-                -2px -2px 6px rgba(255, 255, 255, 0.02);
-        }
-
-        [data-theme="light"] .alert {
-            background: rgba(239, 68, 68, 0.08);
-            color: #dc2626;
-            box-shadow:
-                4px 4px 10px rgba(163, 177, 198, 0.4),
-                -4px -4px 10px rgba(255, 255, 255, 0.8);
+            color: #ef4444;
         }
 
         /* Form Group */
@@ -324,10 +262,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             align-items: center;
             gap: 8px;
             font-size: 11px;
-            color: var(--text-secondary);
+            color: var(--text2);
             margin-bottom: 10px;
             font-weight: 600;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .frm-lbl i {
@@ -340,7 +279,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 16px 20px;
             background: var(--bg-input);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 12px;
             color: var(--text);
             font-size: 14px;
             font-weight: 500;
@@ -348,40 +287,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             outline: none;
         }
 
-        [data-theme="dark"] .frm-in {
-            box-shadow:
-                inset 4px 4px 8px rgba(0, 0, 0, 0.3),
-                inset -2px -2px 6px rgba(255, 255, 255, 0.02);
-        }
-
-        [data-theme="light"] .frm-in {
-            box-shadow:
-                inset 5px 5px 10px rgba(163, 177, 198, 0.5),
-                inset -5px -5px 10px rgba(255, 255, 255, 0.9);
-        }
-
         .frm-in:focus {
             border-color: var(--mr-blue);
-        }
-
-        [data-theme="dark"] .frm-in:focus {
-            box-shadow:
-                inset 4px 4px 8px rgba(0, 0, 0, 0.3),
-                inset -2px -2px 6px rgba(255, 255, 255, 0.02),
-                0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-
-        [data-theme="light"] .frm-in:focus {
-            box-shadow:
-                inset 5px 5px 10px rgba(163, 177, 198, 0.5),
-                inset -5px -5px 10px rgba(255, 255, 255, 0.9),
-                0 0 0 3px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
         }
 
         .frm-in::placeholder {
-            color: var(--text-muted);
+            color: var(--text3);
             font-weight: 400;
-            opacity: 0.7;
         }
 
         /* Login Button */
@@ -389,11 +302,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
             padding: 18px;
             border: none;
-            border-radius: 14px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            background: var(--mr-gradient-btn);
+            background: var(--gradient-btn);
             color: #fff;
             display: flex;
             align-items: center;
@@ -402,46 +315,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             transition: var(--transition);
             margin-top: 15px;
             letter-spacing: 1px;
-        }
-
-        [data-theme="dark"] .login-btn {
-            box-shadow:
-                6px 6px 15px rgba(0, 0, 0, 0.4),
-                -3px -3px 10px rgba(255, 255, 255, 0.02),
-                0 0 25px var(--glow);
-        }
-
-        [data-theme="light"] .login-btn {
-            box-shadow:
-                6px 6px 15px rgba(163, 177, 198, 0.5),
-                -6px -6px 15px rgba(255, 255, 255, 0.8),
-                0 0 25px var(--glow);
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
         }
 
         .login-btn:hover {
             transform: translateY(-3px);
-            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-        }
-
-        [data-theme="dark"] .login-btn:hover {
-            box-shadow:
-                8px 8px 20px rgba(0, 0, 0, 0.5),
-                -4px -4px 12px rgba(255, 255, 255, 0.02),
-                0 0 40px var(--glow);
-        }
-
-        [data-theme="light"] .login-btn:hover {
-            box-shadow:
-                8px 8px 20px rgba(163, 177, 198, 0.6),
-                -8px -8px 20px rgba(255, 255, 255, 0.9),
-                0 0 40px var(--glow);
+            background: var(--gradient-btn-hover);
+            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.5);
         }
 
         /* Login Footer */
         .login-footer {
             text-align: center;
             margin-top: 30px;
-            color: var(--text-muted);
+            color: var(--text3);
             font-size: 11px;
             font-weight: 500;
             letter-spacing: 1px;
@@ -453,14 +341,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 50%;
             opacity: 0.3;
             pointer-events: none;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
         }
 
-        [data-theme="dark"] .login-decor {
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
-        }
-
-        [data-theme="light"] .login-decor {
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+        .light-mode .login-decor {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
         }
 
         .login-decor-1 {
@@ -486,7 +371,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             .login-icon {
                 width: 70px;
                 height: 70px;
-                font-size: 30px;
+                font-size: 28px;
             }
 
             .login-title {
@@ -495,7 +380,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
-<body data-theme="<?= htmlspecialchars($currentTheme) ?>">
+<body class="<?= $isLightMode ? 'light-mode' : '' ?>">
     <!-- Decorative Elements -->
     <div class="login-decor login-decor-1"></div>
     <div class="login-decor login-decor-2"></div>
@@ -503,18 +388,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <!-- Theme Toggle -->
         <div class="theme-toggle-login">
-            <button type="button" class="theme-btn-login" id="lightThemeBtn" onclick="setTheme('light')" title="Açık Tema">
-                <i class="fas fa-sun"></i>
-            </button>
-            <button type="button" class="theme-btn-login" id="darkThemeBtn" onclick="setTheme('dark')" title="Koyu Tema">
-                <i class="fas fa-moon"></i>
+            <button type="button" class="theme-btn-login" id="themeToggleBtn" onclick="toggleTheme()" title="Tema Değiştir">
+                <i class="fas fa-moon" id="themeIcon"></i>
             </button>
         </div>
 
         <div class="login-box">
-            <div class="login-icon">
-                <i class="fas fa-building"></i>
-            </div>
+            <div class="login-icon">MR</div>
             <div class="login-title"><?= APP_NAME ?></div>
             <div class="login-slogan"><?= APP_SLOGAN ?></div>
 
@@ -550,30 +430,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script>
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            document.body.setAttribute('data-theme', theme);
-            document.cookie = 'mr_theme=' + theme + ';path=/;max-age=31536000;SameSite=Lax';
-            updateThemeButtons(theme);
-        }
+        function toggleTheme() {
+            var body = document.body;
+            var html = document.documentElement;
+            var icon = document.getElementById('themeIcon');
 
-        function updateThemeButtons(theme) {
-            var lightBtn = document.getElementById('lightThemeBtn');
-            var darkBtn = document.getElementById('darkThemeBtn');
-
-            if (theme === 'light') {
-                lightBtn.classList.add('active');
-                darkBtn.classList.remove('active');
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                html.classList.remove('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                document.cookie = 'mr_theme=dark;path=/;max-age=31536000;SameSite=Lax';
             } else {
-                darkBtn.classList.add('active');
-                lightBtn.classList.remove('active');
+                body.classList.add('light-mode');
+                html.classList.add('light-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                document.cookie = 'mr_theme=light;path=/;max-age=31536000;SameSite=Lax';
             }
         }
 
-        // Initialize theme on load
+        // Sayfa yüklendiğinde tema ikonunu güncelle
         document.addEventListener('DOMContentLoaded', function() {
-            var theme = document.documentElement.getAttribute('data-theme') || 'light';
-            updateThemeButtons(theme);
+            var icon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
         });
     </script>
 </body>
