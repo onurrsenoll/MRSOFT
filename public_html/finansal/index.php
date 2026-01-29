@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             overflow: hidden;
         }
 
-        /* Arka plan gorseli - tam ekran, orantili */
+        /* Arka plan gorseli - tam ekran kaplama */
         body::before {
             content: '';
             position: absolute;
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
             height: 100%;
             background: url('img/login-bg.jpg') no-repeat center center;
-            background-size: contain;
+            background-size: cover;
             z-index: 0;
         }
 
