@@ -79,13 +79,10 @@ body.light-mode .logo-blue { display: block; }
     align-items: center;
     justify-content: flex-start;
     gap: clamp(2px, 0.3vw, 5px);
-    overflow-x: auto !important;
-    overflow-y: visible !important;
+    overflow: visible !important;
     height: auto !important;
     min-height: 56px;
     flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
     background: var(--bg-card) !important;
 }
 
