@@ -121,30 +121,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         body {
             min-height: 100vh;
-            background:
-                url('img/login-bg.jpg') no-repeat center center fixed,
-                linear-gradient(135deg, #020c1b 0%, #0a1628 50%, #0d1f3c 100%);
-            background-size: cover;
+            background: #0a1628;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 8%;
+            padding-right: 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Arka plan gorseli - tam ekran, orantili */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/login-bg.jpg') no-repeat center center;
+            background-size: contain;
+            z-index: 0;
         }
 
         .login-wrapper {
             width: 100%;
-            max-width: 380px;
+            max-width: 350px;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
+        /* Tamamen seffaf modul */
         .login-form {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            padding: 40px 30px;
         }
 
         .form-group {
@@ -154,10 +165,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .form-group label {
             display: block;
-            color: rgba(255, 255, 255, 0.8);
+            color: #fff;
             font-size: 0.9rem;
             margin-bottom: 8px;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .form-group .input-wrapper {
@@ -169,15 +181,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 1.1rem;
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
+        /* Input - seffaf, yazildiginda beyaz dolar */
         .form-group input {
             width: 100%;
             padding: 15px 15px 15px 45px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 12px;
             color: #fff;
             font-size: 1rem;
@@ -185,13 +200,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        .form-group input:focus {
+        /* Yazildiginda beyaz arka plan */
+        .form-group input:focus,
+        .form-group input:not(:placeholder-shown) {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a2e;
+            border-color: #fff;
             outline: none;
-            border-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input:focus::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Yazildiginda icon rengi degissin */
+        .form-group input:focus ~ .input-wrapper i,
+        .form-group input:not(:placeholder-shown) + i {
+            color: #1a1a2e;
+        }
+
+        .form-group .input-wrapper:has(input:focus) i,
+        .form-group .input-wrapper:has(input:not(:placeholder-shown)) i {
+            color: #1a1a2e;
         }
 
         .form-check {
@@ -199,18 +233,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .form-check-label {
-            color: rgba(255, 255, 255, 0.7);
+            color: #fff;
             font-size: 0.9rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .form-check-input {
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
 
         .form-check-input:checked {
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            border-color: #00d4ff;
+            background: #fff;
+            border-color: #fff;
         }
 
         /* Holografik 3D Giris Butonu */
@@ -336,60 +371,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .login-icon .icon-3d {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 204, 0.1));
+            background: transparent;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow:
-                0 0 30px rgba(0, 212, 255, 0.3),
-                inset 0 0 20px rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             animation: pulse3d 2s ease-in-out infinite;
         }
 
         .login-icon .icon-3d i {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #00d4ff, #00ffcc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .login-icon .icon-3d::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid rgba(0, 212, 255, 0.3);
-            animation: rotate3d 4s linear infinite;
+            font-size: 2.8rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
         }
 
         @keyframes pulse3d {
             0%, 100% {
                 transform: scale(1);
-                box-shadow:
-                    0 0 30px rgba(0, 212, 255, 0.3),
-                    inset 0 0 20px rgba(0, 212, 255, 0.1);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             }
             50% {
                 transform: scale(1.05);
-                box-shadow:
-                    0 0 50px rgba(0, 212, 255, 0.5),
-                    inset 0 0 30px rgba(0, 212, 255, 0.2);
-            }
-        }
-
-        @keyframes rotate3d {
-            0% {
-                transform: rotateZ(0deg);
-            }
-            100% {
-                transform: rotateZ(360deg);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
             }
         }
 
@@ -398,7 +406,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             body {
                 justify-content: center;
                 padding: 20px;
-                background-position: left center;
+            }
+
+            body::before {
+                background-size: cover;
             }
 
             .login-wrapper {
@@ -406,7 +417,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             .login-form {
-                padding: 40px 25px;
+                padding: 30px 20px;
             }
         }
     </style>
