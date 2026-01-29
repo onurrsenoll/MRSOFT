@@ -390,48 +390,38 @@
    DROPDOWN ICONS - PREMIUM GRADIENT HOVER
    ======================================== */
 .drop-item i {
-    width: 32px;
-    height: 32px;
-    display: flex;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 165, 233, 0.1));
-    color: var(--mr-blue);
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(14, 165, 233, 0.15)) !important;
+    color: var(--mr-blue) !important;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
 }
 
-.drop-item i::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-btn);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 8px;
+/* Font Awesome icon styling - DO NOT override ::before */
+.drop-item i.fas,
+.drop-item i.far,
+.drop-item i.fab,
+.drop-item i.fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome !important;
+    font-weight: 900;
 }
 
 .drop-item:hover i {
-    color: #fff;
+    color: #fff !important;
+    background: var(--gradient-btn) !important;
     transform: scale(1.1) rotate(-5deg);
     box-shadow:
         0 8px 25px rgba(99, 102, 241, 0.4),
         0 0 30px rgba(59, 130, 246, 0.3);
-}
-
-.drop-item:hover i::before {
-    opacity: 1;
-}
-
-.drop-item i .fa,
-.drop-item i .fas,
-.drop-item i .far,
-.drop-item i .fab {
-    position: relative;
-    z-index: 1;
 }
 
 /* ADK PRO Icon Special */
@@ -887,10 +877,16 @@ body.light-mode .stat-icon.red {
 }
 
 body.light-mode .drop-item i {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(14, 165, 233, 0.05));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(14, 165, 233, 0.1)) !important;
+    color: var(--mr-blue) !important;
     box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.05),
         inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .drop-item:hover i {
+    background: var(--gradient-btn) !important;
+    color: #fff !important;
 }
 
 body.light-mode .section-header i,

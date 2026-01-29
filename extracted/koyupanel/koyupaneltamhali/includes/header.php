@@ -41,16 +41,17 @@ $isLightMode = ($currentTheme === 'light');
         })();
     </script>
 <style>
-/* ========== LOGO ========== */
+/* ========== LOGO - Responsive ========== */
 .nav-logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: clamp(10px, 1vw, 20px);
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .nav-logo img {
-    height: 47px;
+    height: clamp(32px, 3vw, 47px);
     width: auto;
     transition: all 0.3s ease;
 }
@@ -66,36 +67,47 @@ body.light-mode .logo-blue { display: block; }
 /* ========== NAVIGATION ========== */
 .header{display:none!important}
 
-/* Navigation Bar */
+/* Navigation Bar - Responsive & Zoom-friendly */
 .nav {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 9999 !important;
-    padding: 8px 20px !important;
+    padding: 0.5rem 1rem !important;
     display: flex;
     align-items: center;
-    gap: 5px;
-    overflow: visible !important;
+    justify-content: flex-start;
+    gap: clamp(2px, 0.3vw, 5px);
+    overflow-x: auto !important;
+    overflow-y: visible !important;
     height: auto !important;
     min-height: 56px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
-/* Nav Items */
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Nav Items - Responsive */
 .nav-item {
     position: relative;
     cursor: pointer;
     display: inline-flex !important;
     align-items: center;
-    padding: 10px 14px;
+    padding: clamp(6px, 0.6vw, 10px) clamp(8px, 0.8vw, 14px);
     text-decoration: none;
-    font-size: 12px;
+    font-size: clamp(9px, 0.75vw, 12px);
     font-weight: 600;
-    gap: 6px;
-    border-radius: 10px;
+    gap: clamp(3px, 0.3vw, 6px);
+    border-radius: clamp(6px, 0.5vw, 10px);
     transition: all 0.3s ease;
     color: var(--text2);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-item:hover {
@@ -108,18 +120,18 @@ body.light-mode .logo-blue { display: block; }
     color: #fff;
 }
 
-/* Dropdown Menu */
+/* Dropdown Menu - Responsive */
 .dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 260px;
+    min-width: clamp(200px, 20vw, 260px);
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: clamp(10px, 1vw, 14px);
     z-index: 99999 !important;
-    padding: 10px 0;
-    margin-top: 8px;
+    padding: clamp(6px, 0.5vw, 10px) 0;
+    margin-top: clamp(4px, 0.4vw, 8px);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -133,21 +145,22 @@ body.light-mode .logo-blue { display: block; }
     transform: translateY(0);
 }
 
-/* Dropdown Items - Mavi Taban Beyaz Yazı */
+/* Dropdown Items - Responsive */
 .drop-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
+    gap: clamp(8px, 0.8vw, 12px);
+    padding: clamp(6px, 0.6vw, 10px) clamp(10px, 1vw, 14px);
     text-decoration: none;
-    font-size: 12px;
+    font-size: clamp(10px, 0.8vw, 12px);
     font-weight: 600;
     transition: all 0.2s ease;
-    margin: 4px 10px;
-    border-radius: 8px;
+    margin: clamp(2px, 0.3vw, 4px) clamp(6px, 0.6vw, 10px);
+    border-radius: clamp(6px, 0.5vw, 8px);
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 165, 233, 0.1));
     color: var(--mr-blue);
     border: 1px solid rgba(59, 130, 246, 0.2);
+    white-space: nowrap;
 }
 
 .drop-item:hover {
@@ -161,13 +174,17 @@ body.light-mode .logo-blue { display: block; }
 .drop-item i {
     width: 28px;
     height: 28px;
-    display: flex;
+    min-width: 28px;
+    min-height: 28px;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(14, 165, 233, 0.2));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(14, 165, 233, 0.2)) !important;
     border-radius: 6px;
-    color: var(--mr-blue);
+    color: var(--mr-blue) !important;
     font-size: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
 }
 
 .drop-item:hover i {
