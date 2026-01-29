@@ -1,55 +1,11 @@
 <?php
 /**
  * MR HASAR DANIŞMANLIK - Giriş Sayfası
- * Sunucu yapısına uyumlu versiyon
+ * Admin login sayfasına yönlendir
  */
 
-require_once 'config.php';
-
-// Oturumu başlat
-startSecureSession();
-
-// Zaten giriş yapmışsa yönlendir
-if (isLoggedIn()) {
-    header('Location: modules/dashboard.php');
-    exit;
-}
-
-$error = '';
-$username = '';
-
-// Form gönderildi mi?
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
-
-    if (empty($username) || empty($password)) {
-        $error = 'Kullanıcı adı ve şifre gereklidir.';
-    } else {
-        $db = getDB();
-        $stmt = $db->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND is_active = 1");
-        $stmt->execute([$username, $username]);
-        $user = $stmt->fetch();
-
-        if ($user && (password_verify($password, $user['password']) || $password === $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['user_name'] = $user['name'];
-            $_SESSION['user_email'] = $user['email'];
-            $_SESSION['user_role'] = $user['role'];
-
-            $stmt = $db->prepare("UPDATE users SET last_login = NOW() WHERE id = ?");
-            $stmt->execute([$user['id']]);
-
-            auditLog('users', $user['id'], 'LOGIN');
-
-            header('Location: modules/dashboard.php');
-            exit;
-        } else {
-            $error = 'Geçersiz kullanıcı adı veya şifre.';
-        }
-    }
-}
+header('Location: admin/login.php');
+exit;
 ?>
 <!DOCTYPE html>
 <html lang="tr">
