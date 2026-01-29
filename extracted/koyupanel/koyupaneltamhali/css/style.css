@@ -101,18 +101,18 @@ body {
 }
 
 /* ========================================
-   ARKA PLAN WATERMARK LOGO - Kartların altında
+   ARKA PLAN WATERMARK LOGO - Boş alanda ortalanmış
    ======================================== */
 body::before {
     content: '';
     position: fixed;
-    top: 70%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40vw;
-    height: 40vw;
-    max-width: 450px;
-    max-height: 450px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 650px;
+    max-height: 650px;
     background-image: url('../assets/logos/logo-white.png');
     background-repeat: no-repeat;
     background-position: center center;
