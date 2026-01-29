@@ -20,15 +20,15 @@ date_default_timezone_set('Europe/Istanbul');
 
 // Veritabani ayarlari
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'mrhasard_finansal');
-define('DB_USER', 'mrhasard_finansal');
-define('DB_PASS', 'Smyr2022!');
+define('DB_NAME', 'mrhasard_mrhasar_db');
+define('DB_USER', 'mrhasard_mrhasar_db');
+define('DB_PASS', 'Bx&jsqf.55');
 define('DB_CHARSET', 'utf8mb4');
 
 // Uygulama ayarlari
-define('APP_NAME', 'MR HASAR DANISMANLIK');
+define('APP_NAME', 'MR HASAR DANISMANLIK VE FILO YONETIMI');
 define('APP_SLOGAN', 'HERZAMAN FARKEDER');
-define('APP_VERSION', 'v11.0');
+define('APP_VERSION', 'V2.0.0');
 
 // Veritabani baglantisi
 try {
