@@ -3,11 +3,11 @@
  * MR HASAR DANIŞMANLIK - Giriş Sayfası
  */
 
-require_once 'config.php';
+require_once 'admin/config.php';
 
 // Zaten giriş yapmışsa yönlendir
 if (isLoggedIn()) {
-    header('Location: index.php');
+    header('Location: admin/index.php');
     exit;
 }
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             logActivity($pdo, 'LOGIN', 'users', $user['id']);
 
             // Yönlendir
-            header('Location: index.php');
+            header('Location: admin/index.php');
             exit;
         } else {
             $error = 'Geçersiz kullanıcı adı veya şifre.';
