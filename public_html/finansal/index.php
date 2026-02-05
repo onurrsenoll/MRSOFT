@@ -20,9 +20,9 @@ date_default_timezone_set('Europe/Istanbul');
 
 // Veritabani ayarlari
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'mrhasard_finansal');
-define('DB_USER', 'mrhasard_finansal');
-define('DB_PASS', 'Smyr2022!');
+define('DB_NAME', 'mrhasard_mrhasar_db');
+define('DB_USER', 'mrhasard_mrhasar_db');
+define('DB_PASS', 'Bx&jsqf.55');
 define('DB_CHARSET', 'utf8mb4');
 
 // Uygulama ayarlari
